@@ -1,0 +1,39 @@
+/*  This file has css classes used in multiple pages.  */
+
+
+/*  Centered column.  */
+.text-center {
+    max-width: 600px;
+    margin: auto;
+}
+
+.container-center {
+    max-width: 600px;
+    margin: auto;
+}
+.flex {
+    display: flex;
+}
+.space-between {
+    justify-content: space-between;
+}
+
+h2, h3, p {
+    margin: 0px;
+}
+
+h4 {
+    font-family: sans-serif;
+}
+
+.icon {
+    width: 18px;
+    margin-right: 10px;
+}
+.dark-mode .icon {
+    filter: invert();
+}
+
+.centered {
+    text-align: center;
+}
