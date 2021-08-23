@@ -21,32 +21,33 @@
 
 @import url('./assets/styling/page-content.css');
 @import url('./assets/styling/header.css');
+@import url('./assets/styling/css-images.css');
 
 /*  Variables.    */
 :root {
-    --blue: #466EA8;
-    --blue2: #4698A8;
-    --brown: #A88846;
-    --orange: #F87600;
-    --gray: #999999;
-    --black: #0D0D0D;
-    --light-black: #1E1E1E;
+  --blue: #466EA8;
+  --blue2: #4698A8;
+  --brown: #A88846;
+  --orange: #F87600;
+  --gray: #999999;
+  --black: #0D0D0D;
+  --light-black: #1E1E1E;
 }
 
 .blue {
-    color: var(--blue);
+  color: var(--blue);
 }
 .blue2 {
-    color: var(--blue2);
+  color: var(--blue2);
 }
 .brown {
-    color: var(--brown);
+  color: var(--brown);
 }
 .orange {
-    color: var(--orange);
+  color: var(--orange);
 }
 .gray {
-    color: var(--gray);
+  color: var(--gray);
 }
 
 /*  App base.     */
@@ -57,11 +58,5 @@
   color: #2c3e50;
 }
 
- .divider-line {
-    margin-top: 20px;
-    width: 400px;
-    border-bottom: solid 1px black;
-    margin-left: auto;
-    margin-right: auto;
-  }
+
 </style>

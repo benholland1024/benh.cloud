@@ -1,0 +1,20 @@
+/*  These classes produce visual elements when applied to div's.  */
+
+.divider-line {
+  margin-top: 20px;
+  width: 400px;
+  border-bottom: solid 1px black;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ellipsis {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 100px;
+  height: 50px;
+  background-image: url(../misc/ellipsis.svg);
+  background-repeat: no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+}
