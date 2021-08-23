@@ -7,6 +7,9 @@
   margin-left: auto;
   margin-right: auto;
 }
+.dark-mode .divider-line {
+  border-bottom: solid 1px white;
+}
 
 .ellipsis {
   margin-top: 40px;
@@ -17,4 +20,7 @@
   background-repeat: no-repeat;
   margin-left: auto;
   margin-right: auto;
+}
+.dark-mode .ellipsis {
+  filter: invert();
 }

@@ -6,6 +6,13 @@ header {
   margin-bottom: 20px;
 }
 
+#page-subtitle {
+  color: gray;
+  font-style: italic;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
 /*  The nav bar.        */
 nav {
   display: flex;
