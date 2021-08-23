@@ -26,7 +26,7 @@
         <p><img src="../assets/icons/mail.png" class="icon" />benholland21@mailbox.org</p>
         <p><img src="../assets/icons/phone.png" class="icon" />330.703.8105</p>
         <p><img src="../assets/icons/github.png" class="icon" />www.github.com/bhollan5</p>
-        <p><img src="../assets/icons/resume.png" class="icon" /><a href="../public/page_assets/bio/resume.pdf" target="_blank">View my resume</a></p>
+        <p><img src="../assets/icons/resume.png" class="icon" /><a :href="`${publicPath}page_assets/bio/resume.pdf`" target="_blank">View my resume</a></p>
       </div>
     </div>
 
@@ -82,9 +82,14 @@
 // import HelloWorld from '@/components/HelloWorld.vue'
 
 export default {
-  name: 'Home',
+  name: 'Bio',
   components: {
     // HelloWorld
+  },
+  data() {
+    return {
+      publicPath: process.env.BASE_URL, //  Links to /public
+    }
   }
 }
 </script>

@@ -30,7 +30,7 @@
       <div class="portfolio-item-text">
         <p>Website for KSU's hackathon, <b>Kent Hack Enough 2018</b>.</p>
         <p>This was a collaborative effort, but I lead the website design this year. </p>
-        <p>This website is no longer active.  You can see a style guide I made <a href="../assets/page_assets/portfolio/khe2019_StyleGuide.png" target="_blank">here</a>.</p>
+        <p>This website is no longer active.  You can see a style guide I made <a :href="`${publicPath}page_assets/portfolio/khe2019_StyleGuide.png`" target="_blank">here</a>.</p>
       </div>
     </div>
 
@@ -39,7 +39,7 @@
       <div class="portfolio-item-text">
         <p>My old personal website.</p>
         <p>This website is no longer active. It used to be live at www.benh.io. </p>
-        <p>You can browse an archived version <a href="/old_website/index.html" target="_blank">here</a>.</p>
+        <p>You can browse an archived version <a :href="`${publicPath}page_assets/portfolio/old_website/index.html`" target="_blank">here</a>.</p>
       </div>
     </div>
 
@@ -64,6 +64,22 @@
 
   </div>
 </template>
+
+
+<script>
+
+export default {
+  name: 'Portfolio',
+  components: {
+  },
+  data() {
+    return {
+      publicPath: process.env.BASE_URL, //  Links to /public
+    }
+  }
+}
+</script>
+
 
 <style scoped>
 
