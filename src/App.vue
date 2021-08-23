@@ -1,7 +1,13 @@
 <template>
-  <div :class="{ 'dark-mode': dark_mode }">
+  <div :class="{ 'dark-mode': dark_mode }" style="min-height: 100vh;">
   
-    <div id="tooltip" v-if="0">Hi!</div>
+    <div id="tooltip" :style="{
+        top: (tooltip_y - 50) + 'px', 
+        left: (tooltip_x - 40) + 'px',
+        display: tooltip.display ? 'block' : 'none'
+      }">
+      {{ tooltip.message }}!
+    </div>
 
     <img src="./assets/misc/moon.png" id="dark-mode-icon" @click="toggle_dark_mode()" />
     
@@ -30,7 +36,18 @@ export default {
   
   data() {
     return {
-      dark_mode: false
+      dark_mode: false,
+      tooltip_x: 0,
+      tooltip_y: 0
+    }
+  },
+
+  computed: {
+    tooltip() {
+      return {
+        display: this.$store.state.display_tooltip,
+        message: this.$store.state.tooltip_message
+      }
     }
   },
   
@@ -42,11 +59,17 @@ export default {
   },
   
   mounted() {
+    //  Get browser's dark mode settings
     if (String(localStorage.darkMode) == "false") {
       this.dark_mode = false;
     } else {
       this.dark_mode = true;
     }
+
+    window.addEventListener('mousemove', (event) => {
+      this.tooltip_x = event.clientX;
+      this.tooltip_y = event.clientY;
+    })
   }
 
 }
@@ -115,6 +138,19 @@ html, body {
 }
 .dark-mode a:not(.nav-link) {
   color: var(--blue2);
+}
+
+#tooltip {
+    position: absolute;
+    /* display: none; */
+    width: 100px;
+    height: 40px;
+    font-size: 12px;
+    border-radius: 5px;
+    background: black;
+    color: white;
+    z-index: 100;
+    padding: 5px 10px;
 }
 
 </style>

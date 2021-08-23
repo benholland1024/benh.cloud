@@ -14,7 +14,8 @@
       <div class="current-entry">
         <input type="text" placeholder="What are you working on?" id="current-task" class="description"/>
         <div class="time-area" id="current-timer-display">0:00:00</div>
-        <img src="../assets/page_assets/dash/play_button.png" id="play-button" class="button-area" onclick="start_timer()">
+        <img src="../assets/page_assets/dash/play_button.png" id="play-button" class="button-area" 
+          @click="start_timer()" @mouseover="$store.commit('show_tooltip', 'Must be logged in to use the timer!')" @mouseout="$store.commit('hide_tooltip')">
         <img src="../assets/page_assets/dash/pause_button.png" id="pause-button" class="button-area hidden" onclick="stop_timer()">
       </div>
       <div id="entries">
@@ -29,8 +30,18 @@
 <script>
 export default {
   name: 'TimeTracker',
-  props: {
-    
+  data() {
+    return {
+
+    }
+  },
+  methods: {
+    start_timer() {
+
+    },
+    stop_timer() {
+
+    }
   }
 }
 </script>
