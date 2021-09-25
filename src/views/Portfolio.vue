@@ -2,7 +2,7 @@
   <div class="text-center">
 
     <br /><br /><br /><br />
-    <p class="centered">Below are two websites I've designed that are in active commercial use. </p>
+    <p class="centered">Below is the website I've designed that is active commercial use. </p>
 
     <div class="portfolio-item">
       <img src="../assets/page_assets/portfolio/salbertlaw.png" class="portfolio-pic" alt="A screenshot of the home page of salbertlaw.com" />
@@ -13,14 +13,14 @@
       </div>
     </div>
 
-    <div class="portfolio-item">
+    <!--<div class="portfolio-item">
       <img src="../assets/page_assets/portfolio/coyotehill.png" class="portfolio-pic" alt="A screenshot of the homepage of coyotehilllodge.com" />
       <div class="portfolio-item-text">
         <p>Website for the <b>Coyote Hill Lodge</b>.</p>
         <p>I designed & implemented this website with VueJS. </p>
         <p>Live URL: <a href="https://coyotehilllodge.com/" target="_blank">https://coyotehilllodge.com/</a></p>
       </div>
-    </div>
+    </div>-->
 
     <br /><br /><br /><br />
     <p class="centered">And here are two websites I designed that are no longer in use. </p>
