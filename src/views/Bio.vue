@@ -10,7 +10,7 @@
         <p> My name is Ben, born in 1996.  I live in NE Ohio.  I studied computer science at Kent State University. </p>
         <br /><br />
         <h3>Career</h3>
-        <p> I'm currently interviewing to work as a software developer at OverDrive.  </p>
+        <p> I'm currently working as a software developer at Casentric.  </p>
         <br /><br />
         <h3>Hobbies</h3>
         <p>Drums and guitar</p>
