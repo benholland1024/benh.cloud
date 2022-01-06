@@ -11,8 +11,10 @@
         <br /><br />
         <h3>Career</h3>
         <p> I'm currently working at Giant Eagle as a curbside shopper, while I look for my next software job.  </p>
+        <!-- <p> I want to work a 40 hour week doing something that I find meaningful.  </p> -->
         <br /><br />
         <h3>Interests</h3>
+        <p>Software (specifically, web design)</p>
         <p>Economics and politics</p>
         <p>Drums and guitar</p>
         <p>3d modeling and printing</p>
@@ -50,8 +52,8 @@
         <br /><br />
         <h3>Some good movies</h3>
         <ol>
+          <li>Melancholia (2011)</li>
           <li>In Bruges (2008)</li>
-          <li>Birdman (2014)</li>
           <li>Stranger Than Fiction (2006)</li>
           <li>The Secret Life of Bees (2008)</li>
           <li>Little Miss Sunshine (2006)</li>
@@ -61,12 +63,12 @@
         <h3>Some good books</h3>
         <ol>
           <li>The Jungle by Upton Sinclair</li>
-          <li>100 Yearrs of Solitude by Gabriel García Márquez</li>
+          <li>100 Years of Solitude by Gabriel García Márquez</li>
           <li>Malagash by Joey Comeau</li>
           <li>Little Fires Everywhere by Celeste Ng</li>
           <li>Heart of Darkness by Joseph Conrad</li>
-          
         </ol>
+        <br /><br />
       </div>
     </div>
 
