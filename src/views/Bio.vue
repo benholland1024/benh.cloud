@@ -24,7 +24,7 @@
       <div style="width:48%">
         <img src="../assets/page_assets/bio/selfie.jpg" style="width: 70%; padding: 0px 0px 20px 20px;" />
         <br />
-        <p><img src="../assets/icons/mail.png" class="icon" />benholland21@mailbox.org</p>
+        <p><img src="../assets/icons/mail.png" class="icon" />bhollan5@kent.edu</p>
         <p><img src="../assets/icons/phone.png" class="icon" />330.703.8105</p>
         <p><img src="../assets/icons/github.png" class="icon" />www.github.com/bhollan5</p>
         <p><img src="../assets/icons/resume.png" class="icon" /><a :href="`${publicPath}page_assets/bio/resume.pdf`" target="_blank">View my resume</a></p>
