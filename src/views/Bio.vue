@@ -10,14 +10,13 @@
         <p> My name is Ben, born in 1996.  I live in NE Ohio.  I studied computer science at Kent State University. </p>
         <br /><br />
         <h3>Career</h3>
-        <p> I'm currently working as a software developer at Casentric.  </p>
+        <p> I'm currently working at Giant Eagle as a curbside shopper, while I look for my next software job.  </p>
         <br /><br />
-        <h3>Hobbies</h3>
+        <h3>Interests</h3>
+        <p>Economics and politics</p>
         <p>Drums and guitar</p>
-        <p>Music writing</p>
         <p>3d modeling and printing</p>
         <p>Creative writing, especially scripts</p>
-        <p>German and Spanish (still learning!)</p>
         <p>Visual design, for games, UIs, & art</p>
       </div>
       <div style="width:48%">
@@ -40,16 +39,16 @@
 
     <div class="container-center flex space-between">
       <div style="width:48%">
-        <h3>Current top 5 albums</h3>
+        <h3>Some good albums</h3>
         <ol>
-          <li>O My Heart by Mother Mother</li>
+          <li>The Leo Sun Sets by Serena Isioma</li>
           <li>We've Been Talking by Enemies</li>
           <li>Magic Trix by Xenia Rubinos</li>
           <li>Ga Ga Ga Ga Ga by Spoon</li>
           <li>Omega La La by Rubblebucket</li>
         </ol>
         <br /><br />
-        <h3>Current top 5 movies</h3>
+        <h3>Some good movies</h3>
         <ol>
           <li>In Bruges (2008)</li>
           <li>Birdman (2014)</li>
@@ -59,13 +58,14 @@
         </ol>
       </div>
       <div style="width:48%">
-        <h3>Current top 5 books</h3>
+        <h3>Some good books</h3>
         <ol>
-          <li>Frankenstein by Mary Shelley</li>
+          <li>The Jungle by Upton Sinclair</li>
+          <li>100 Yearrs of Solitude by Gabriel García Márquez</li>
           <li>Malagash by Joey Comeau</li>
           <li>Little Fires Everywhere by Celeste Ng</li>
           <li>Heart of Darkness by Joseph Conrad</li>
-          <li>The Jungle by Upton Sinclair</li>
+          
         </ol>
       </div>
     </div>

@@ -4,7 +4,7 @@
     <div id="time-tracker-title" class="dash-widget-header">
       Time tracker
     </div>
-    <div class="day-label" id="today-date">Today -- August 20</div>
+    <div class="day-label" id="today-date">Today -- {{current_month}} {{current_date}}</div>
     <div class="day-container">
       <div class="entry labels">
         <span class="description">description of time use</span>
@@ -32,10 +32,22 @@ export default {
   name: 'TimeTracker',
   data() {
     return {
-
+      current_month: '',
+      current_date: 0,
     }
   },
+  mounted() {
+    this.get_timer_info();
+  },
   methods: {
+    get_timer_info() {
+      var d = new Date();
+      var month_num = d.getMonth();
+
+      const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      this.current_month = months[month_num];
+      this.current_date = d.getDate();
+    },
     start_timer() {
 
     },

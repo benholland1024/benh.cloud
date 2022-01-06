@@ -20,6 +20,11 @@ const routes = [
     component: () => import('../views/Plans.vue')
   },
   {
+    path: '/landing',
+    name: 'Landing',
+    component: () => import('../views/Landing.vue')
+  },
+  {
     path: '/dash',
     name: 'Dash',
     component: () => import('../views/Dash.vue')

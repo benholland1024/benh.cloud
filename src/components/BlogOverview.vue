@@ -3,11 +3,11 @@
   <div id="blog" class="dash-widget">
     <div id="blog-title" class="dash-widget-header">Blog</div>
     <div id="blog-link-container">
-      <a href="/wiki">Wiki base</a>
+      <!-- <a href="/wiki">Wiki base</a>
       <br/>
       <a href="/wiki-categories">Page categories...</a>
       <a href="/wiki-index">Complete page index...</a>
-      <a href="/wiki-editor" id="create-new-page">Create new page...</a>
+      <a href="/wiki-editor" id="create-new-page">Create new page...</a> -->
     </div>
   </div>
 </template>
