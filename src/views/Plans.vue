@@ -43,7 +43,7 @@
         <br /><br /><br />
         <p>For example, I'd like to make personal finance tools, recipe and meal tracking tools, household chore and errand management tools, etc.</p>
         <br />
-        <p>I'd also like it to have tools to help people make progress on personal progress, like stories, comics, and animations. </p>
+        <p>I'd also like it to have tools to help people make progress on personal projects, like stories, comics, and animations. </p>
         <br />
         <p>The software would be available on our online platform, which could also provide user file storage and messaging.</p>
         <br /><br /><br />
