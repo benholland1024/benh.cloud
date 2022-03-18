@@ -2,7 +2,7 @@
   <div class="text-center">
 
     <br /><br /><br /><br />
-    <p class="centered">Below are the websites I've designed that are in active commercial use. </p>
+    <p class="centered">Below are the websites I've designed that are in active use. </p>
 
     <div class="portfolio-item">
       <img src="../assets/page_assets/portfolio/salbertlaw.png" class="portfolio-pic" alt="A screenshot of the home page of salbertlaw.com" />
@@ -19,6 +19,15 @@
         <p>A tutorial website for ReactJS.</p>
         <p>I designed & implemented this website with ReactJS, describing ReactJS. </p>
         <p>Live URL: <a href="https://how-react.works/" target="_blank">https://how-react.works/</a></p>
+      </div>
+    </div>
+
+    <div class="portfolio-item">
+      <img src="../assets/page_assets/portfolio/how-dotnet-works.png" class="portfolio-pic" alt="A screenshot of the homepage of how-dotnet.works" />
+      <div class="portfolio-item-text">
+        <p>A tutorial website for DotNet.</p>
+        <p>I designed & implemented this website with DotNet, describing DotNet. WIP. </p>
+        <p>Live URL: <a href="https://how-dotnet.works/" target="_blank">https://how-dotnet.works/</a></p>
       </div>
     </div>
 
