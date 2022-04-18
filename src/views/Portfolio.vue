@@ -31,6 +31,15 @@
       </div>
     </div>
 
+    <div class="portfolio-item">
+      <img src="../assets/page_assets/portfolio/how-angular-works.png" class="portfolio-pic" alt="A screenshot of the homepage of how-dotnet.works" />
+      <div class="portfolio-item-text">
+        <p>A tutorial website for Google's development framework, Angular.</p>
+        <p>I designed & implemented this website with Angular, describing how to use Angular. WIP. </p>
+        <p>Live URL: <a href="https://how-angular.works/" target="_blank">https://how-angular.works/</a></p>
+      </div>
+    </div>
+
     <br /><br /><br /><br />
     <p class="centered">And here are two websites I designed that are no longer in use. </p>
 
