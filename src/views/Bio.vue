@@ -22,7 +22,7 @@
         <p>Visual design, for games, UIs, & art</p>
       </div>
       <div style="width:48%">
-        <img src="../assets/page_assets/bio/selfie.jpg" style="width: 70%; padding: 0px 0px 20px 20px;" />
+        <img src="../assets/page_assets/bio/selfie.png" style="width: 50%; padding: 0px 0px 20px 20px;" />
         <br />
         <p><img src="../assets/icons/mail.png" class="icon" />bhollan5@kent.edu</p>
         <p><img src="../assets/icons/phone.png" class="icon" />330.703.8105</p>
