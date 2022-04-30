@@ -27,7 +27,7 @@
         <p><img src="../assets/icons/mail.png" class="icon" />bhollan5@kent.edu</p>
         <p><img src="../assets/icons/phone.png" class="icon" />330.703.8105</p>
         <p><img src="../assets/icons/github.png" class="icon" />www.github.com/bhollan5</p>
-        <p><img src="../assets/icons/resume.png" class="icon" /><a :href="`${publicPath}page_assets/bio/BenHolland_resume.pdf`" target="_blank">View my resume</a></p>
+        <p><img src="../assets/icons/resume.png" class="icon" /><a :href="`${publicPath}page_assets/bio/BenHolland_TechResume.pdf`" target="_blank">View my resume</a></p>
       </div>
     </div>
 
