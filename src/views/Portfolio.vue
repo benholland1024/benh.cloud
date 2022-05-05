@@ -40,6 +40,15 @@
       </div>
     </div>
 
+    <div class="portfolio-item">
+      <img src="../assets/page_assets/portfolio/rooftop-media.png" class="portfolio-pic" alt="A screenshot of the homepage of rooftop-media.org" />
+      <div class="portfolio-item-text">
+        <p>A website for Rooftop Media, a software company I am working on starting.</p>
+        <p>Currently under construction.  This website links to some other software projects I'm working on. </p>
+        <p>Live URL: <a href="https://rooftop-media.org/" target="_blank">https://rooftop-media.org/</a></p>
+      </div>
+    </div>
+
     <br /><br /><br /><br />
     <p class="centered">And here are two websites I designed that are no longer in use. </p>
 
