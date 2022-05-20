@@ -10,7 +10,7 @@
         <p> My name is Ben, born in 1996.  I live in NE Ohio.  I studied computer science at Kent State University. </p>
         <br /><br />
         <h3>Career</h3>
-        <p> I'm currently working for Giant Eagle's curbside department, and pursuing software work on the side.  </p>
+        <p> I'm currently working for <a href="https://astoriacafemarket.com/" target="_blank">Astoria</a>, and pursuing software work on the side.  </p>
         <!-- <p> I want to work a 40 hour week doing something that I find meaningful.  </p> -->
         <br /><br />
         <h3>Interests</h3>
@@ -27,7 +27,8 @@
         <p><img src="../assets/icons/mail.png" class="icon" />bhollan5@kent.edu</p>
         <p><img src="../assets/icons/phone.png" class="icon" />330.703.8105</p>
         <p><img src="../assets/icons/github.png" class="icon" />www.github.com/bhollan5</p>
-        <p><img src="../assets/icons/resume.png" class="icon" /><a :href="`${publicPath}page_assets/bio/BenHolland_TechResume.pdf`" target="_blank">View my resume</a></p>
+        <p><img src="../assets/icons/resume.png" class="icon" /><a :href="`${publicPath}page_assets/bio/BenHolland_TechResume.pdf`" target="_blank">View my tech resume</a></p>
+        <p><img src="../assets/icons/resume.png" class="icon" /><a :href="`${publicPath}page_assets/bio/BenHolland_ServiceResume.pdf`" target="_blank">View my service resume</a></p>
       </div>
     </div>
 

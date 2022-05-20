@@ -6,7 +6,9 @@
     <!--  Section 1: Current plans  -->
     <div class="container-center flex space-between">
       <div style="width:48%">
-        <p>My priority right now is to get a software development job, for a company with a mission I believe in.  </p>
+        <p>Right now, I'm content working in the service industry, and pursuing software projects in my free time.  </p>
+        <br />
+        <p>I'm also open to a software development position for a good company.</p>
         <br />
         <p>I'm interested in both frontend and backend development.  </p>
         <br />
@@ -33,7 +35,7 @@
     <!--  Section 2: KitchenWare  -->
     <div class="container-center flex space-between">
       <div style="width:48%">
-        <p>In my free time, I'm working on a personal project called Rooftop Media.  The project will be hosted at www.rooftop-media.org.</p>
+        <p>In my free time, I'm working on a personal project called Rooftop Media.  The project will be hosted at <a href="www.rooftop-media.org" target="_blank">www.rooftop-media.org</a>.</p>
         <br />
         <p>When I get the time to continue this project, I'd like it to be a non-profit software company. </p>
         <br />
