@@ -35,6 +35,30 @@
     <!--  Section 2: KitchenWare  -->
     <div class="container-center flex space-between">
       <div style="width:48%">
+        <p>
+          My long term goal is to open my own grocery market.
+        </p>
+        <br/><br/>
+        <p>
+          I'm recently interested in food supply chains, and managing the merchandising and sales of a store.
+        </p>
+        <br/>
+        <p>
+          I think small, independently owned grocery stores have a lot to offer communities. 
+          Big corporate supermarkets can provide cheap prices, but often fail at connecting with the 
+          individual people in their communities. 
+        </p>
+        <br/><br/>
+        <p>
+          I'm also interested in making my own store software, including a POS system, inventory tracking, etc. 
+        </p>
+        <br/><br/>
+        <p>
+          I've been interested in making my own software for a while -- to the right, you can see images from 
+          a few of my previous software UI ideas.
+        </p>
+      </div>
+      <!-- <div style="width:48%">
         <p>In my free time, I'm working on a personal project called Rooftop Media.  The project will be hosted at <a href="www.rooftop-media.org" target="_blank">www.rooftop-media.org</a>.</p>
         <br />
         <p>When I get the time to continue this project, I'd like it to be a non-profit software company. </p>
@@ -51,7 +75,7 @@
         <br /><br /><br />
 
         <p>This project is a longterm goal, that I expect to revise.  For now, I'm looking for more career experience at a good company.</p>
-      </div>
+      </div> -->
       <div style="width:48%">
         <img src="../assets/page_assets/plans/rooftop-screenshot-1.png" style="padding: 20px; width: 70%;" />
         <br /><br />
