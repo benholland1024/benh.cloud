@@ -8,15 +8,15 @@
       <div style="width:48%">
         <p>Right now, I'm content working in the service industry, and pursuing software projects in my free time.  </p>
         <br />
-        <p>I'm also open to a software development position for a good company.</p>
+        <!-- <p>I'm also open to a software development position for a good company.</p> -->
         <br />
-        <p>I'm interested in both frontend and backend development.  </p>
+        <p>I'm interested in both frontend and backend development, and recently, low level hardware design and production.  </p>
         <br />
         <p>I have the most experience in Javascript, both for the web and NodeJS. I'm comfortable with frontend design, HTTPS networking, API design, and databases.</p>
         <br />
         <p>I have experience with several JS frameworks, include VueJS, ReactJS, and lots of smaller npm libraries.   </p>
         <br />
-        <p>I'm also interested in lower level languages, like C++. I'm especially interested in the low level architecture of browsers, JS engines, and web frameworks. </p>
+        <p>I also have some experience in C++. </p>
         <br />
       </div>
       <div style="width:48%">
@@ -32,14 +32,14 @@
 
 
 
-    <!--  Section 2: KitchenWare  -->
+    <!--  Section 2: Long term goals  -->
     <div class="container-center flex space-between">
       <div style="width:48%">
         <p>
-          My long term goal is to open my own grocery market.
+          I'm not sure what my long term goal is. 
         </p>
         <br/><br/>
-        <p>
+        <!-- <p>
           I'm recently interested in food supply chains, and managing the merchandising and sales of a store.
         </p>
         <br/>
@@ -52,7 +52,7 @@
         <p>
           I'm also interested in making my own store software, including a POS system, inventory tracking, etc. 
         </p>
-        <br/><br/>
+        <br/><br/> -->
         <p>
           I've been interested in making my own software for a while -- to the right, you can see images from 
           a few of my previous software UI ideas.

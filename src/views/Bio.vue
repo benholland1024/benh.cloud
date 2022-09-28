@@ -15,11 +15,10 @@
         <br /><br />
         <h3>Interests</h3>
         <p>Software (specifically, web design)</p>
-        <p>Economics and politics</p>
+        <p>Economics and the environment</p>
         <p>Drums and guitar</p>
-        <p>3d modeling and printing</p>
-        <p>Creative writing, especially scripts</p>
-        <p>Visual design, for games, UIs, & art</p>
+        <p>Journaling and creative writing</p>
+        <p>Visual design</p>
       </div>
       <div style="width:48%">
         <img src="../assets/page_assets/bio/selfie.png" style="width: 50%; padding: 0px 0px 20px 20px;" />
