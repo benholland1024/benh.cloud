@@ -13,7 +13,7 @@
       </div>
     </div>
 
-    <div class="portfolio-item">
+    <div class="portfolio-item" v-if="0">
       <img src="../assets/page_assets/portfolio/how-react-works.png" class="portfolio-pic" alt="A screenshot of the homepage of how-react.works" />
       <div class="portfolio-item-text">
         <p>A tutorial website for ReactJS.</p>
@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <div class="portfolio-item">
+    <div class="portfolio-item" v-if="0">
       <img src="../assets/page_assets/portfolio/how-angular-works.png" class="portfolio-pic" alt="A screenshot of the homepage of how-dotnet.works" />
       <div class="portfolio-item-text">
         <p>A tutorial website for Google's development framework, Angular.</p>
@@ -40,7 +40,7 @@
       </div>
     </div>
 
-    <div class="portfolio-item">
+    <div class="portfolio-item" v-if="0">
       <img src="../assets/page_assets/portfolio/rooftop-media.png" class="portfolio-pic" alt="A screenshot of the homepage of rooftop-media.org" />
       <div class="portfolio-item-text">
         <p>A website for Rooftop Media, a software company I am working on starting.</p>

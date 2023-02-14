@@ -10,7 +10,7 @@
         <p> My name is Ben, born in 1996.  I live in NE Ohio.  I studied computer science at Kent State University. </p>
         <br /><br />
         <h3>Career</h3>
-        <p> I'm currently working for <a href="https://astoriacafemarket.com/" target="_blank">Astoria</a>, and pursuing software work on the side.  </p>
+        <p> I'm currently working for <a href="https://oneillhc.com/" target="_blank">O'Neill Healthcare</a>, and pursuing software work on the side.  </p>
         <!-- <p> I want to work a 40 hour week doing something that I find meaningful.  </p> -->
         <br /><br />
         <h3>Interests</h3>
