@@ -7,27 +7,26 @@
     <div class="container-center flex space-between">
       <div style="width:48%">
         <h3>About Me</h3>
-        <p> My name is Ben, born in 1996.  I live in NE Ohio.  I studied computer science at Kent State University. </p>
+        <p> My name is Ben, born in 1996.  I live in NE Ohio.  I have a B.Sc. in computer science from KSU, and am enrolled at Akron University for biomedical engineering. </p>
         <br /><br />
         <h3>Career</h3>
-        <p> I'm currently working for <a href="https://oneillhc.com/" target="_blank">O'Neill Healthcare</a>, and pursuing software work on the side.  </p>
+        <p> I'm currently an undergraduate assistant for <a href="https://www.beta-lab.org/" target="_blank">BETA Lab</a>, working on testing novel artificial heart valves.  </p>
         <!-- <p> I want to work a 40 hour week doing something that I find meaningful.  </p> -->
         <br /><br />
         <h3>Interests</h3>
-        <p>Software (specifically, web design)</p>
-        <p>Economics and the environment</p>
+        <p>Engineering, physics, medicine</p>
+        <p>Software programming</p>
+        <p>3d modelling and printing</p>
+        <p>Linguistics</p>
         <p>Drums and guitar</p>
-        <p>Journaling and creative writing</p>
-        <p>Visual design</p>
       </div>
       <div style="width:48%">
         <img src="../assets/page_assets/bio/selfie.jpg" style="width: 50%; padding: 0px 0px 20px 20px;" />
         <br />
-        <p><img src="../assets/icons/mail.png" class="icon" />bhollan5@kent.edu</p>
+        <p><img src="../assets/icons/mail.png" class="icon" /><a href="mailto:benholland1024@gmail.com">benholland1024@gmail.com</a></p>
         <p><img src="../assets/icons/phone.png" class="icon" />330.703.8105</p>
         <p><img src="../assets/icons/github.png" class="icon" />www.github.com/bhollan5</p>
-        <p><img src="../assets/icons/resume.png" class="icon" /><a :href="`${publicPath}page_assets/bio/BenHolland_TechResume.pdf`" target="_blank">View my tech resume</a></p>
-        <p><img src="../assets/icons/resume.png" class="icon" /><a :href="`${publicPath}page_assets/bio/BenHolland_ServiceResume.pdf`" target="_blank">View my service resume</a></p>
+        <p><img src="../assets/icons/resume.png" class="icon" /><a :href="`${publicPath}page_assets/bio/BenHolland_Resume.pdf`" target="_blank">View my resume</a></p>
       </div>
     </div>
 
@@ -39,7 +38,7 @@
 
     <br /><br /><br /><br />
 
-    <div class="container-center flex space-between">
+    <div class="container-center flex space-between" style="display:none">
       <div style="width:48%">
         <h3>Some good albums</h3>
         <ol>

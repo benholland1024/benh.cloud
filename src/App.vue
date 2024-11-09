@@ -19,7 +19,7 @@
     <nav id="nav-links">
       <router-link class="nav-link blue" to="/">Bio</router-link>
       <router-link class="nav-link blue2" to="/portfolio">Portfolio</router-link>
-      <router-link class="nav-link brown" to="/plans">Plans</router-link>
+      <router-link class="nav-link brown" to="/plans" v-if="0">Plans</router-link>
       <router-link class="nav-link orange" to="/dash">Dash</router-link>
     </nav>
 

@@ -20,6 +20,15 @@
         <br />
       </div>
       <div style="width:48%">
+        <div style="width:48%">
+        <img src="../assets/page_assets/plans/rooftop-screenshot-1.png" style="padding: 20px; width: 100%;" />
+        <br /><br />
+        <!-- <img src="../assets/page_assets/plans/rooftop-screenshot-2.png" style="padding: 20px; width: 70%;" />
+        <br /><br /> -->
+        <img src="../assets/page_assets/plans/recipe-tracker.png" style="padding: 20px; width: 100%;" />
+        <br /><br />
+        <img src="../assets/page_assets/plans/rooftop-screenshot-3.png" style="padding: 20px; width: 100%;" />
+      </div>
       </div>
     </div>
 
@@ -33,7 +42,7 @@
 
 
     <!--  Section 2: Long term goals  -->
-    <div class="container-center flex space-between">
+    <div class="container-center flex space-between" v-if="0">
       <div style="width:48%">
         <p>
           I'm not sure what my long term goal is. 

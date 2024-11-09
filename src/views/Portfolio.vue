@@ -2,7 +2,7 @@
   <div class="text-center">
 
     <br /><br /><br /><br />
-    <p class="centered">Below are the websites I've designed that are in active use. </p>
+    <p class="centered" v-if="0">Below are the websites I've designed that are in active use. </p>
 
     <div class="portfolio-item">
       <img src="../assets/page_assets/portfolio/salbertlaw.png" class="portfolio-pic" alt="A screenshot of the home page of salbertlaw.com" />
@@ -22,7 +22,7 @@
       </div>
     </div>
 
-    <div class="portfolio-item">
+    <div class="portfolio-item" v-if="0">
       <img src="../assets/page_assets/portfolio/how-dotnet-works.png" class="portfolio-pic" alt="A screenshot of the homepage of how-dotnet.works" />
       <div class="portfolio-item-text">
         <p>A tutorial website for Microsoft's development framework, .NET.</p>
@@ -50,7 +50,7 @@
     </div>
 
     <br /><br /><br /><br />
-    <p class="centered">And here are two websites I designed that are no longer in use. </p>
+    <p class="centered" v-if="0">And here are two websites I designed that are no longer in use. </p>
 
     <div class="portfolio-item">
       <img src="../assets/page_assets/portfolio/khe2019.png" class="portfolio-pic" alt="A screenshot of the home page of the KHE 2018 website.s" />
@@ -71,7 +71,7 @@
     </div>
 
     <br /><br /><br /><br />
-    <p class="centered">
+    <p class="centered" v-if="0">
       Finally, this website is for a design company I founded with my friend, Nick C.<br />
       I made the 3d models used on the website, while Nick designed & coded the website itself.
     </p>
