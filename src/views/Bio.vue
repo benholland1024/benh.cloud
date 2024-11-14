@@ -32,7 +32,7 @@
 
     <br /><br /><br /><br />
 
-    <div class="ellipsis"></div>
+    <div class="ellipsis" v-if="0"></div>
 
     <!--  Top 5 section  -->
 

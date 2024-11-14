@@ -14,6 +14,15 @@
 .flex {
     display: flex;
 }
+@media only screen and (max-width: 600px) {
+    .flex {
+      display: block;
+    }
+    .flex div {
+        width: 90% !important;
+        margin: 0 auto;
+    }
+}
 .space-between {
     justify-content: space-between;
 }
