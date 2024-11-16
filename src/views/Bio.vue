@@ -25,7 +25,7 @@
         <br />
         <p><img src="../assets/icons/mail.png" class="icon" /><a href="mailto:benholland1024@gmail.com">benholland1024@gmail.com</a></p>
         <p><img src="../assets/icons/phone.png" class="icon" />330.703.8105</p>
-        <p><img src="../assets/icons/github.png" class="icon" /><a href="https://github.com/benholland1024"></a>www.github.com/benholland1024</p>
+        <p><img src="../assets/icons/github.png" class="icon" /><a href="https://github.com/benholland1024">github.com/benholland1024</a></p>
         <p><img src="../assets/icons/resume.png" class="icon" /><a :href="`${publicPath}page_assets/bio/BenHolland_Resume.pdf`" target="_blank">View my resume</a></p>
       </div>
     </div>
