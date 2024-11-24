@@ -5,6 +5,15 @@
     <p class="centered" v-if="0">Below are the websites I've designed that are in active use. </p>
 
     <div class="portfolio-item">
+      <img src="../assets/page_assets/portfolio/pulse_duplicator_diagram.png" class="portfolio-pic" alt="A screenshot of the home page of salbertlaw.com" />
+      <div class="portfolio-item-text">
+        <p>A novel <b>pulse duplicator</b>.</p>
+        <p>This is my main project while working at BETA Lab.</p>
+        <p>View a <a :href="`${publicPath}page_assets/portfolio/PulseDuplicatorBMESPoster.pdf`" target="_blank">poster presenting the work.</a></p>
+      </div>
+    </div>
+
+    <div class="portfolio-item">
       <img src="../assets/page_assets/portfolio/salbertlaw.png" class="portfolio-pic" alt="A screenshot of the home page of salbertlaw.com" />
       <div class="portfolio-item-text">
         <p>Website for the <b>Albert Law Firm</b>.</p>
