@@ -7,18 +7,19 @@
     <div class="container-center flex space-between">
       <div style="width:48%">
         <h3>About Me</h3>
-        <p> My name is Ben, born in 1996.  I live in NE Ohio.  I have a B.Sc. in computer science from KSU, and am enrolled at Akron University for biomedical engineering. </p>
+        <p> I'm a freelance web designer. I have a B.Sc. in computer science from KSU.  </p>
         <br /><br />
-        <h3>Career</h3>
+        <!--<h3>Career</h3>
         <p> I'm currently an undergraduate assistant for <a href="https://www.beta-lab.org/" target="_blank">BETA Lab</a>, working on testing novel artificial heart valves.  </p>
-        <!-- <p> I want to work a 40 hour week doing something that I find meaningful.  </p> -->
+        -->
         <br /><br />
         <h3>Interests</h3>
-        <p>Engineering, physics, medicine</p>
-        <p>Software programming</p>
-        <p>3d modelling and printing</p>
-        <p>Linguistics</p>
-        <p>Drums and guitar</p>
+        <p>&nbsp;&#9758;&nbsp;Web and software design</p>
+        <p>&nbsp;&#9758;&nbsp;Engineering, physics, medicine</p>
+        <p>&nbsp;&#9758;&nbsp;PCB design and embedded software</p>
+        <p>&nbsp;&#9758;&nbsp;3d modelling and printing</p>
+        <p>&nbsp;&#9758;&nbsp;Linguistics</p>
+        <p>&nbsp;&#9758;&nbsp;Drums and guitar</p>
       </div>
       <div style="width:48%">
         <img src="../assets/page_assets/bio/selfie.jpg" style="width: 50%; padding: 0px 0px 20px 20px;" />
