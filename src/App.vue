@@ -11,7 +11,7 @@
 
     <img src="./assets/misc/moon.png" id="dark-mode-icon" @click="toggle_dark_mode()" />
     
-    <header>
+    <!-- <header>
       <h1>&#9639; &nbsp; Ben H. &nbsp; &#9640;</h1>
       <p id="page-subtitle">Hi! This is my personal website.</p>
     </header>
@@ -21,9 +21,9 @@
       <router-link class="nav-link blue2" to="/portfolio">Portfolio</router-link>
       <router-link class="nav-link brown" to="/plans" v-if="0">Plans</router-link>
       <router-link class="nav-link orange" to="/dash">Dash</router-link>
-    </nav>
+    </nav> -->
 
-    <div class="divider-line"></div>
+    <!-- <div class="divider-line"></div> -->
 
     <router-view/>
 

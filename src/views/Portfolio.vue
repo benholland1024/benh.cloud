@@ -1,5 +1,9 @@
 <template>
   <div class="text-center">
+    <h1>Portfolio</h1>
+    <p class="back-link">
+      <router-link class="blue2 portfolio-link" to="/">&#8672; Back to the Landing page </router-link>
+    </p>
 
     <br /><br /><br /><br />
     <p class="centered" v-if="0">Below are the websites I've designed that are in active use. </p>
@@ -118,6 +122,16 @@ export default {
 
 
 <style scoped>
+
+h1 {
+  margin-top: 0px;
+  padding-top: 100px;
+  text-align: center;
+  font-family: sans-serif;
+}
+.back-link {
+  text-align: center;
+}
 
 .portfolio-item {
     width: 100%;

@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Bio from '../views/Bio.vue'
+import Landing2 from '../views/Landing2.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'Bio',
-    component: Bio
+    name: 'Landing2',
+    component: Landing2
   },
   {
     path: '/portfolio',
