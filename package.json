@@ -10,6 +10,7 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "three": "^0.177.0",
+    "three-orbitcontrols": "^2.110.3",
     "vue": "^3.0.0",
     "vue-cli-service": "^5.0.10",
     "vue-router": "^4.0.0-0",
