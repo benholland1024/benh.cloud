@@ -96,6 +96,9 @@ export default {
   #container {
     width: 100%;
     min-height: 800px;
+    max-width: 1500px;
+    left: 0 auto;
+    right: 0 auto;
     padding-top: 100px;
     padding-bottom: 200px;
     display: flex;
