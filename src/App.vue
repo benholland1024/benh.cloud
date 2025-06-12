@@ -121,6 +121,12 @@ html, body {
   margin: 0px;
 }
 
+header, #nav-links, .divider-line, #dark-mode-icon {
+  z-index: 1;
+}
+header, #nav-links, .divider-line {
+  position: relative;
+}
 
 /*  Dark mode stuff.   */
 #dark-mode-icon {

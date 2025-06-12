@@ -1,36 +1,20 @@
 <template>
-  <div id="flex-container">
-
-  
-    <div id="left-container">
-      <!-- info -->
-      <div id="info" v-if="show_info && false">
-        <div class="clickable" @click="show_info = false">Hide info</div>
-        <br/>
-        <div id="object-list">
-          <div style="font-weight: bold">Objects:</div>
-          <div v-for="object in objects" :key="object.name">
-            {{ object.name }}
-          </div>
+  <div id="container">
+    <!-- info -->
+    <div id="info" v-if="show_info">
+      <div class="clickable" @click="show_info = false">Hide info</div>
+      <br/>
+      <div id="object-list">
+        <div style="font-weight: bold">Objects:</div>
+        <div v-for="object in objects" :key="object.name">
+          {{ object.name }}
         </div>
       </div>
-    </div> <!--  End left container -->
-
-    <div id="right-container">
-      <h1>About Me</h1>
-      <br>
-      <p>I work in web design, making web apps, animations, data displays, etc. </p>
-      <br>
-      <p>I also have experience in circuit design, controlling motors, and reading from sensors. </p>
-      <br/><br/>
-      <router-link class="blue2 portfolio-link" to="/portfolio">Portfolio &#8674; </router-link>
     </div>
-
-      <!-- info minimized-->
-      <!-- <div id="info-mini" v-else-if="false">
-        <div class="clickable" @click="show_info=true">Show info</div>
-      </div> -->
-
+    <!-- info minimized-->
+    <div id="info-mini" v-else>
+      <div class="clickable" @click="show_info=true">Show info</div>
+    </div>
   </div>
 </template>
 
@@ -62,7 +46,6 @@ export default {
       scene: null,
       renderer: null,
       mesh: null,
-      time: 0,
       show_info: false, // Used to minimize or maximize the info window
       objects: []       // Tracks all meshes added to the scene
     }
@@ -75,7 +58,7 @@ export default {
       //this.listen_for_keypress();
 
       //  Set up the container.
-      let container = document.getElementById('left-container');
+      let container = document.getElementById('container');
 
       //  Set up the scene object.
       scene = new Three.Scene();
@@ -86,14 +69,12 @@ export default {
       var near = 1;
       var far = 2000;
       this.camera = new Three.PerspectiveCamera(lens_angle, aspect, near, far);
-      this.camera.position.z = 10;
-      this.camera.position.y = 10;
-      this.camera.position.x = 10;
+      this.camera.position.z = 1;
 
       //  Add camera to scene. 
       scene.add(this.camera)
 
-      scene.background = new Three.Color('#0D0D0D');
+      scene.background = new Three.Color('rgb(22,22,33)');
 
 
       //  Create a mesh out of a geometry + material
@@ -106,26 +87,10 @@ export default {
       //  Add the mesh to the scene
       // scene.add(plane);
 
-      const sphere_size = 6;
-      for (let x = -sphere_size; x < sphere_size; x++) {
-        for (let y = -sphere_size; y < sphere_size; y++) {
-          for (let z = -sphere_size; z < sphere_size; z++) {
-            let distance = Math.sqrt(x*x + y*y + z*z);
-            console.log(`Distance: sqrt(${x*x} + ${y*y} + ${z*z} = ${distance}`);
-            if (distance > sphere_size || distance < sphere_size - 2) {
-              continue;
-            }
-            let r = 150 + x * 15;
-            let g = 150 + y * 15; 
-            let b = 150 + z * 15;
-            this.create_box(`rgb(${r},${g},${b})`, x, y, z);
-            console.log(`rgb(100,100,${100 + Math.floor(100/x)})`)
-          }
-        }
-      }
+      this.create_box();
 
-      // const axesHelper = new Three.AxesHelper( 5 );
-      // scene.add( axesHelper );
+      const axesHelper = new Three.AxesHelper( 5 );
+      scene.add( axesHelper );
 
       //  Define a light. 
       var ambientLight = new Three.AmbientLight( 0x404040 );
@@ -136,9 +101,6 @@ export default {
       const light = new Three.PointLight( 0xffffff, 100, 100 );
       light.position.set( 10, 0, 0 );
       scene.add( light );
-
-      const light2 = new Three.HemisphereLight( 0xffffbb, 0x080820, 1 );
-      scene.add( light2 );
 
       //  Create a renderer
       this.renderer = new Three.WebGLRenderer({antialias: true});
@@ -176,16 +138,13 @@ export default {
       });
     },
 
-    create_box(color, x, y, z) {
-      const size = 0.5;
-      const BoxGeometry = new Three.BoxGeometry(size,size,size);
+    create_box() {
+      const BoxGeometry = new Three.BoxGeometry(4,4,4);
       const BoxMaterial = new Three.MeshStandardMaterial({
-        color: color,
+        color: 'green',
       }); 
       var box = new Three.Mesh(BoxGeometry, BoxMaterial);
-      box.position.x = x;
-      box.position.y = y;
-      box.position.z = z;
+      box.position.z = -10;
 
       //  Add the mesh to the scene
       scene.add(box);
@@ -201,14 +160,6 @@ export default {
       requestAnimationFrame(this.animate);
       // this.mesh.rotation.x += 0.01;
       // this.plane.rotation.y += 0.02;
-      this.time += 0.01;
-      for (let i = 0; i < this.objects.length; i++) {
-        let scale = Math.abs(Math.sin(this.time + i * 0.01 + this.objects[i].obj.position.y * 0.1 ))
-        this.objects[i].obj.scale.x = scale;
-        this.objects[i].obj.scale.y = scale;
-        this.objects[i].obj.scale.z = scale;
-
-      }
       this.objects[0].obj.rotation.y -= 0.01;
       this.objects[0].obj.rotation.z -= 0.01;
 
@@ -221,18 +172,10 @@ export default {
 </script>
 
 <style scoped>
-  #flex-container {
-    display: flex;
+  #container {
     width: 100%;
-    padding-top: 100px;
-    justify-content: space-around;
-    flex-flow: row wrap;
-  }
-
-  #left-container {
-    width: 600px;
-    height: 400px;
-    position: relative;
+    height: 100vh;
+    position: absolute;
     top: 0px;
     z-index: 0;
   }
@@ -258,18 +201,5 @@ export default {
     font-weight: bold;
     text-decoration: underline;
     text-align: right;
-  }
-
-  #right-container {
-    width: 400px;
-    padding: 10px;
-    padding-top: 10px;
-    padding-bottom: 300px;
-    text-align: center;
-    font-family: sans-serif;
-  }
-
-  .portfolio-link {
-    font-weight: bold;
   }
 </style>
