@@ -25,7 +25,7 @@
 
     <div class="divider-line"></div>
 
-    <router-view/>
+    <router-view :dark="dark_mode"/>
 
   </div>
 </template>
@@ -134,6 +134,7 @@ header, #nav-links, .divider-line {
   top: 20px;
   right: 20px;
   cursor: pointer;
+  z-index: 2;
 }
 .dark-mode #dark-mode-icon {
   filter: invert();

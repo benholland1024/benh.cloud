@@ -23,8 +23,16 @@
       <br>
       <p>I also have experience in circuit design, controlling motors, and reading from sensors. </p>
       <br/><br/>
+      <div style="width: 300px; text-align: left; padding-left: 100px;">
+        <p><img src="../assets/icons/mail.png" class="icon" /><a href="mailto:benholland1024@gmail.com">benholland1024@gmail.com</a></p>
+        <p><img src="../assets/icons/phone.png" class="icon" /><a href="tel:+13307038105">330.703.8105</a></p>
+        <p><img src="../assets/icons/github.png" class="icon" /><a href="https://github.com/benholland1024">github.com/benholland1024</a></p>
+      </div>
+      <br/>
       <router-link class="blue2 portfolio-link" to="/portfolio">Portfolio &#8674; </router-link>
     </div>
+
+    <div id="display"></div>
 
       <!-- info minimized-->
       <!-- <div id="info-mini" v-else-if="false">
@@ -42,7 +50,7 @@
 */
 
 import * as Three from 'three'
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
+// import { OrbitControls } from "three/examples/jsm/controls/OrbitControls"
 
 
 var scene;
@@ -63,8 +71,23 @@ export default {
       renderer: null,
       mesh: null,
       time: 0,
+      parent_box: null,
+      mouse_down: false,  //  Stores whether the mouse is clicked.
+      mouse_last_x: null, //  Stores the last x value of a move. 
+      mouse_last_y: null, //  Stores the last y value of a move. 
       show_info: false, // Used to minimize or maximize the info window
       objects: []       // Tracks all meshes added to the scene
+    }
+  },
+  props: ['dark'],
+  watch: {
+    dark: function() {
+      console.log("Changed")
+      let bg = '#ffffff';
+      if (this.dark) {
+        bg = '#0D0D0D';
+      }
+      scene.background = new Three.Color(bg);
     }
   },
   methods: {
@@ -73,9 +96,10 @@ export default {
 
       //  Initializes arrow keys for movement.
       //this.listen_for_keypress();
+      this.listen_for_mouse_drag();
 
       //  Set up the container.
-      let container = document.getElementById('left-container');
+      let container = document.getElementById('display');
 
       //  Set up the scene object.
       scene = new Three.Scene();
@@ -86,14 +110,22 @@ export default {
       var near = 1;
       var far = 2000;
       this.camera = new Three.PerspectiveCamera(lens_angle, aspect, near, far);
-      this.camera.position.z = 10;
-      this.camera.position.y = 10;
-      this.camera.position.x = 10;
+      this.camera.position.z = 3;
+      this.camera.position.y = 8.5;
+      this.camera.position.x = 13;
+      this.camera.rotation.x = -.8;
+      this.camera.rotation.y = .8;
+      this.camera.rotation.z = 0.6;
+
 
       //  Add camera to scene. 
       scene.add(this.camera)
 
-      scene.background = new Three.Color('#0D0D0D');
+      let bg = '#ffffff';
+      if (this.$parent.$parent.dark_mode) {
+        bg = '#0D0D0D';
+      }
+      scene.background = new Three.Color(bg);
 
 
       //  Create a mesh out of a geometry + material
@@ -106,12 +138,26 @@ export default {
       //  Add the mesh to the scene
       // scene.add(plane);
 
+      //  Creating a cube which will be the parent of all rainbow cubes
+      const size = 0.5;
+      const BoxGeometry = new Three.BoxGeometry(size,size,size);
+      const BoxMaterial = new Three.MeshStandardMaterial({
+        transparent: true,
+        opacity: 0,
+        color: 'black',
+      }); 
+      var parent_box = new Three.Mesh(BoxGeometry, BoxMaterial);
+
+      //  Add the mesh to the scene
+      scene.add(parent_box);
+      this.parent_box = parent_box;
+
+      //  Creating rainbow cubes arranged in sphere
       const sphere_size = 6;
       for (let x = -sphere_size; x < sphere_size; x++) {
         for (let y = -sphere_size; y < sphere_size; y++) {
           for (let z = -sphere_size; z < sphere_size; z++) {
             let distance = Math.sqrt(x*x + y*y + z*z);
-            console.log(`Distance: sqrt(${x*x} + ${y*y} + ${z*z} = ${distance}`);
             if (distance > sphere_size || distance < sphere_size - 2) {
               continue;
             }
@@ -119,7 +165,6 @@ export default {
             let g = 150 + y * 15; 
             let b = 150 + z * 15;
             this.create_box(`rgb(${r},${g},${b})`, x, y, z);
-            console.log(`rgb(100,100,${100 + Math.floor(100/x)})`)
           }
         }
       }
@@ -147,16 +192,16 @@ export default {
       this.renderer.render(scene, this.camera);
 
       //  Allow mouse to control camera
-      this.controls = new OrbitControls(this.camera, this.renderer.domElement);
-      const updateCameraOrbit = () => {
-        const forward = new Three.Vector3();
-        this.camera.getWorldDirection(forward);
-        this.controls.target.copy(this.camera.position).add(forward);
-      }
-      this.controls.addEventListener('end', () => {
-        updateCameraOrbit();
-      });
-      updateCameraOrbit();
+      // this.controls = new OrbitControls(this.camera, this.renderer.domElement);
+      // const updateCameraOrbit = () => {
+      //   const forward = new Three.Vector3();
+      //   this.camera.getWorldDirection(forward);
+      //   this.controls.target.copy(this.camera.position).add(forward);
+      // }
+      // this.controls.addEventListener('end', () => {
+      //   updateCameraOrbit();
+      // });
+      // updateCameraOrbit();
 
       this.plane = plane;
     },
@@ -175,6 +220,38 @@ export default {
         }
       });
     },
+    //  INIT: Mouse! 
+    listen_for_mouse_drag() {
+
+      let _this = this;
+      document.body.addEventListener('mousemove', function (e) {
+        // If the mouse is down and we've moved before, get the difference and move the boxes. 
+        if (_this.mouse_last_x != null && _this.mouse_last_y != null && _this.mouse_down && _this.parent_box) {
+          _this.parent_box.rotation.y += (e.x - _this.mouse_last_x) * 0.01;
+          _this.parent_box.rotation.x += (e.y - _this.mouse_last_y) * 0.01;
+        }
+        _this.mouse_last_x = e.x;
+        _this.mouse_last_y = e.y;
+      });
+      document.body.addEventListener('mousedown', function () {
+        _this.mouse_down = true;
+        _this.mouse_last_x = null;
+        _this.mouse_last_y = null;
+      });
+      document.body.addEventListener('mouseup', function () {
+        _this.mouse_down = false;
+      });
+
+      window.addEventListener("resize", onWindowResize);
+    
+      function onWindowResize() {
+        if (!_this.camera) { return ; }
+        _this.camera.aspect = window.innerWidth / window.innerHeight;
+        _this.camera.updateProjectionMatrix();
+        _this.renderer.setSize(window.innerWidth, window.innerHeight);
+      }
+
+    },
 
     create_box(color, x, y, z) {
       const size = 0.5;
@@ -187,8 +264,12 @@ export default {
       box.position.y = y;
       box.position.z = z;
 
+      box.parent = this.parent_box;
+      this.parent_box.add(box);
+
       //  Add the mesh to the scene
-      scene.add(box);
+      //scene.add(box);
+
 
       this.objects.push({
         name: 'box1',
@@ -201,6 +282,7 @@ export default {
       requestAnimationFrame(this.animate);
       // this.mesh.rotation.x += 0.01;
       // this.plane.rotation.y += 0.02;
+      this.parent_box.rotation.y += 0.001;
       this.time += 0.01;
       for (let i = 0; i < this.objects.length; i++) {
         let scale = Math.abs(Math.sin(this.time + i * 0.01 + this.objects[i].obj.position.y * 0.1 ))
@@ -209,10 +291,10 @@ export default {
         this.objects[i].obj.scale.z = scale;
 
       }
-      this.objects[0].obj.rotation.y -= 0.01;
-      this.objects[0].obj.rotation.z -= 0.01;
+      // this.objects[0].obj.rotation.y -= 0.01;
+      // this.objects[0].obj.rotation.z -= 0.01;
 
-      this.controls.update();
+      // this.controls.update();
       // console.log(this.box.position);
       this.renderer.render(scene, this.camera);
     }
@@ -223,10 +305,19 @@ export default {
 <style scoped>
   #flex-container {
     display: flex;
-    width: 100%;
+    width: 100vw;
     padding-top: 100px;
     justify-content: space-around;
     flex-flow: row wrap;
+    position: relative;
+  }
+  #display {
+    top: 0px;
+    left: 0px;
+    position: absolute !important;
+    width: 100vw;
+    height: 100%;
+    z-index: 0;
   }
 
   #left-container {
@@ -234,7 +325,8 @@ export default {
     height: 400px;
     position: relative;
     top: 0px;
-    z-index: 0;
+    z-index: 1;
+    /* border: solid 1px white; */
   }
   #info, #info-mini {
     position: absolute;
@@ -267,9 +359,19 @@ export default {
     padding-bottom: 300px;
     text-align: center;
     font-family: sans-serif;
+    z-index: 1;
+    background: rgba(255,255,255,.5)
+  }
+  .dark-mode #right-container  {
+    background: rgba(13,13,13,.5)
+
   }
 
   .portfolio-link {
     font-weight: bold;
+  }
+
+  p {
+    margin-bottom: 5px;;
   }
 </style>
