@@ -290,8 +290,8 @@ export default {
         this.objects[i].obj.scale.y = scale;
         this.objects[i].obj.scale.z = scale;
 
-        this.objects[i].obj.rotation.x += scale * 0.01;
-        this.objects[i].obj.rotation.y += scale * 0.01;
+        // this.objects[i].obj.rotation.x += scale * 0.01;
+        // this.objects[i].obj.rotation.y += scale * 0.01;
       }
       // this.objects[0].obj.rotation.y -= 0.01;
       // this.objects[0].obj.rotation.z -= 0.01;
