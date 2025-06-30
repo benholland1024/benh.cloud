@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Bio from '../views/Bio.vue'
+import Landing from '../views/Landing.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'Bio',
-    component: Bio
+    name: 'Landing',
+    component: Landing
   },
   {
     path: '/portfolio',
@@ -20,9 +20,9 @@ const routes = [
     component: () => import('../views/Plans.vue')
   },
   {
-    path: '/landing',
-    name: 'Landing',
-    component: () => import('../views/Landing.vue')
+    path: '/3d-playground',
+    name: '3dPlayground',
+    component: () => import('../views/3dPlayground.vue')
   },
   {
     path: '/dash',
