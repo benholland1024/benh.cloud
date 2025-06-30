@@ -1,5 +1,5 @@
 <template>
-  <div :class="{ 'dark-mode': dark_mode }" style="min-height: 100vh;">
+  <div :class="{ 'dark-mode': dark_mode }" style="min-height: 100vh;display:flex;">
   
     <div id="tooltip" :style="{
         top: (tooltip_y - 50) + 'px', 
@@ -10,7 +10,20 @@
     </div>
 
     <img src="./assets/misc/moon.png" id="dark-mode-icon" @click="toggle_dark_mode()" />
+
+    <div id="sidebar">
+      <header>
+        <h1>benh.cloud</h1>
+      </header>
+      <nav id="nav-links">
+        <router-link class="nav-link" to="/"><img src="./assets/page_assets/bio/icons/face.png"/>Bio</router-link>
+        <router-link class="nav-link" to="/portfolio"><img src="./assets/page_assets/bio/icons/briefcase.png"/>dev portfolio</router-link>
+        <router-link class="nav-link" to="/plans"><img src="./assets/page_assets/bio/icons/machine.png"/>design portfolio</router-link>
+        <router-link class="nav-link" to="/dash"><img src="./assets/page_assets/bio/icons/paragraph.png"/>blog</router-link>
+      </nav>
+    </div>
     
+    <!--
     <header>
       <h1>&#9639; &nbsp; Ben H. &nbsp; &#9640;</h1>
       <p id="page-subtitle">Hi! This is my personal website.</p>
@@ -23,7 +36,7 @@
       <router-link class="nav-link orange" to="/dash">Dash</router-link>
     </nav>
 
-    <div class="divider-line"></div>
+    <div class="divider-line"></div>-->
 
     <router-view :dark="dark_mode"/>
 
@@ -79,7 +92,6 @@ export default {
 <style> /*  App-wide styles!  */
 
 @import url('./assets/styling/page-content.css');
-@import url('./assets/styling/header.css');
 @import url('./assets/styling/css-images.css');
 
 /*  Variables.    */
@@ -107,6 +119,12 @@ export default {
 }
 .gray {
   color: var(--gray);
+}
+
+/*  Must credit!  */
+@font-face {
+  font-family: morallySerif;
+  src: url(./assets/page_assets/bio/Morally\ Serif.otf);
 }
 
 /*  App base.     */
@@ -158,6 +176,69 @@ header, #nav-links, .divider-line {
     color: white;
     z-index: 100;
     padding: 5px 10px;
+}
+
+/*  Redesign  */
+
+#sidebar {
+  position: relative;
+  left: 0px;
+  height: 100vh;
+  width: 300px;
+  background: #ddd;
+  z-index: 2;
+}
+.dark-mode #sidebar {
+  background: #161616;
+}
+h1 {
+  text-align: left;
+  width: 100%;
+  padding-left: 10px;
+  margin-bottom: 0px;
+  box-sizing: border-box;
+  font-family: morallySerif;
+  font-weight: normal;
+}
+
+/*  The nav bar.        */
+nav {
+  align-text: left;
+}
+.nav-link {
+  width: 200px;
+  margin-top: 20px;
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  text-align: left;
+  font-family: sans-serif;
+  text-decoration: none;
+  display: block;
+}
+.nav-link, .nav-link:visited {
+  color: white;
+}
+.nav-link img {
+  margin-right: 10px;
+  margin-bottom: -3px;  /*  Makes icons align better with text */
+}
+.nav-link:hover {
+  text-decoration: underline;
+}
+.nav-link.selected {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+nav a.router-link-exact-active {
+  font-weight: bold;
+}
+.dark-mode nav a.router-link-exact-active {
+  background: #222;
+}
+nav a:not(.router-link-exact-active) {
+  font-weight: normal;
 }
 
 </style>

@@ -317,8 +317,8 @@ export default {
     top: 0px;
     left: 0px;
     position: absolute !important;
-    width: 100vw;
-    height: 100%;
+    width: calc(100vw - 300px);
+    height: 100vh;
     z-index: 0;
   }
 
