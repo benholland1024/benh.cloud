@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "node": "^22.17.0",
     "three": "^0.136.0",
     "vue": "^3.0.0",
     "vue-cli-service": "^5.0.10",

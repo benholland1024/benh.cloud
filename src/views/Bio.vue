@@ -7,11 +7,10 @@
     <div class="container-center flex space-between">
       <div style="width:48%">
         <h3>About Me</h3>
-        <p> My name is Ben, born in 1996.  I live in NE Ohio.  I have a B.Sc. in computer science from KSU, and am enrolled at Akron University for biomedical engineering. </p>
+        <p>I I have a B.Sc. in computer science from KSU. </p>
         <br /><br />
         <h3>Career</h3>
         <p> I'm currently an undergraduate assistant for <a href="https://www.beta-lab.org/" target="_blank">BETA Lab</a>, working on testing novel artificial heart valves.  </p>
-        <!-- <p> I want to work a 40 hour week doing something that I find meaningful.  </p> -->
         <br /><br />
         <h3>Interests</h3>
         <p>Engineering, physics, medicine</p>
