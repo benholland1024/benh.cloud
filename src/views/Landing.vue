@@ -63,7 +63,7 @@ export default {
 <style scoped>
   #flex-container {
     display: flex;
-    width: 100vw;
+    /* width: 100vw; */
     box-sizing: border-box;
     padding-top: 100px;
     justify-content: space-around;
