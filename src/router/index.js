@@ -25,6 +25,11 @@ const routes = [
     component: () => import('../views/3dPlayground.vue')
   },
   {
+    path: '/projects',
+    name: 'projects',
+    component: () => import('../views/Projects.vue')
+  },
+  {
     path: '/dash',
     name: 'Dash',
     component: () => import('../views/Dash.vue')

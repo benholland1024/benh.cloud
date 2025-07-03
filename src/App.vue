@@ -1,14 +1,7 @@
 <template>
-  <div :class="{ 'dark-mode': dark_mode }" style="min-height: 100vh;display:flex;">
+  <!-- The outer div, containing the whole app. -->
+  <div :class="{ 'dark-mode': dark_mode }" style="min-height: 100vh; display:flex;">
   
-    <div id="tooltip" :style="{
-        top: (tooltip_y - 50) + 'px', 
-        left: (tooltip_x - 40) + 'px',
-        display: tooltip.display ? 'block' : 'none'
-      }">
-      {{ tooltip.message }}!
-    </div>
-
     <img src="./assets/misc/moon.png" id="dark-mode-icon" @click="toggle_dark_mode()" />
 
     <div id="sidebar">
@@ -16,29 +9,23 @@
         <h1>benh.cloud</h1>
       </header>
       <nav id="nav-links">
-        <router-link class="nav-link" to="/"><img src="./assets/page_assets/bio/icons/face.png"/>Bio</router-link>
-        <router-link class="nav-link" to="/portfolio"><img src="./assets/page_assets/bio/icons/briefcase.png"/>dev portfolio</router-link>
-        <router-link class="nav-link" to="/plans"><img src="./assets/page_assets/bio/icons/machine.png"/>design portfolio</router-link>
+        <router-link class="nav-link" to="/"><img src="./assets/page_assets/bio/icons/face.png"/>bio</router-link>
+        <router-link class="nav-link" to="/portfolio"><img src="./assets/page_assets/bio/icons/briefcase.png"/>portfolio</router-link>
+        <router-link class="nav-link" to="/projects"><img src="./assets/page_assets/bio/icons/machine.png"/>projects</router-link>
         <router-link class="nav-link" to="/dash"><img src="./assets/page_assets/bio/icons/paragraph.png"/>blog</router-link>
       </nav>
     </div>
-    
-    <!--
-    <header>
-      <h1>&#9639; &nbsp; Ben H. &nbsp; &#9640;</h1>
-      <p id="page-subtitle">Hi! This is my personal website.</p>
-    </header>
 
-    <nav id="nav-links">
-      <router-link class="nav-link blue" to="/">Bio</router-link>
-      <router-link class="nav-link blue2" to="/portfolio">Portfolio</router-link>
-      <router-link class="nav-link brown" to="/plans" v-if="0">Plans</router-link>
-      <router-link class="nav-link orange" to="/dash">Dash</router-link>
-    </nav>
+    <div id="content-container">
+      <router-view :dark="dark_mode"/>
+    </div>
 
-    <div class="divider-line"></div>-->
-
-    <router-view :dark="dark_mode"/>
+    <div id="mobile-navbar">
+      <router-link class="nav-link" to="/"><img src="./assets/page_assets/bio/icons/face.png"/><br/>bio</router-link>
+        <router-link class="nav-link" to="/portfolio"><img src="./assets/page_assets/bio/icons/briefcase.png"/><br/>portfolio</router-link>
+        <router-link class="nav-link" to="/projects"><img src="./assets/page_assets/bio/icons/machine.png"/><br/>projects</router-link>
+        <router-link class="nav-link" to="/dash"><img src="./assets/page_assets/bio/icons/paragraph.png"/><br/>blog</router-link>
+    </div>
 
   </div>
 </template>
@@ -59,7 +46,7 @@ export default {
     tooltip() {
       return {
         display: this.$store.state.display_tooltip,
-        message: this.$store.state.tooltip_message
+        message: this.$store.state.tooltip_message,
       }
     }
   },
@@ -83,6 +70,7 @@ export default {
       this.tooltip_x = event.clientX;
       this.tooltip_y = event.clientY;
     })
+
   }
 
 }
@@ -94,7 +82,9 @@ export default {
 @import url('./assets/styling/page-content.css');
 @import url('./assets/styling/css-images.css');
 
-/*  Variables.    */
+/****************** */
+/*    Variables.    */
+/****************** */
 :root {
   --blue: #466EA8;
   --blue2: #4698A8;
@@ -127,7 +117,9 @@ export default {
   src: url(./assets/page_assets/bio/Morally\ Serif.otf);
 }
 
-/*  App base.     */
+/**************** */
+/*    App.vue     */
+/**************** */
 #app {
   /* font-family: Avenir, Helvetica, Arial, sans-serif; */
   -webkit-font-smoothing: antialiased;
@@ -139,10 +131,10 @@ html, body {
   margin: 0px;
 }
 
-header, #nav-links, .divider-line, #dark-mode-icon {
+header, #nav-links, #dark-mode-icon {
   z-index: 1;
 }
-header, #nav-links, .divider-line {
+header, #nav-links {
   position: relative;
 }
 
@@ -178,10 +170,12 @@ header, #nav-links, .divider-line {
     padding: 5px 10px;
 }
 
-/*  Redesign  */
+/*************************** */
+/*  Menu (sidebar + mobile)  */
+/*************************** */
 
 #sidebar {
-  position: relative;
+  position: fixed;
   left: 0px;
   height: 100vh;
   width: 300px;
@@ -201,9 +195,32 @@ h1 {
   font-weight: normal;
 }
 
-/*  The nav bar.        */
-nav {
-  align-text: left;
+#mobile-navbar {
+  display: none;
+}
+
+@media only screen and (max-width: 650px) {
+  #sidebar {
+    display: none;
+  }
+  #mobile-navbar {
+    display: block;
+    background: #ddd;
+    width: 100vw;
+    height: 80px;
+    position: fixed;
+    bottom: 0px;
+    z-index: 2;
+    display: flex;
+  }
+  .dark-mode #mobile-navbar {
+    background: #161616;
+  }
+
+}
+
+#nav-links {
+  text-align: left;
 }
 .nav-link {
   width: 200px;
@@ -221,6 +238,7 @@ nav {
 }
 .nav-link img {
   margin-right: 10px;
+  width: 15px;
   margin-bottom: -3px;  /*  Makes icons align better with text */
 }
 .nav-link:hover {
@@ -239,6 +257,42 @@ nav a.router-link-exact-active {
 }
 nav a:not(.router-link-exact-active) {
   font-weight: normal;
+}
+@media only screen and (max-width: 650px) {
+  .nav-link {
+    text-align: center;
+    margin: 0px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .nav-link img {
+    margin: 0px;
+  }
+  #mobile-navbar a.router-link-exact-active {
+    font-weight: bold;
+  }
+  .dark-mode #mobile-navbar a.router-link-exact-active {
+    background: #222;
+  }
+  #mobile-navbar a:not(.router-link-exact-active) {
+    font-weight: normal;
+  }
+}
+
+
+/************************* */
+/*  Page content container */
+/************************* */
+#content-container {
+  width: 100vw;
+  padding-left: 300px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+@media only screen and (max-width: 650px) {
+  #content-container {
+    padding-left: 0px;
+  }
 }
 
 </style>
