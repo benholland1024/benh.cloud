@@ -181,9 +181,11 @@ header, #nav-links {
   width: 300px;
   background: #ddd;
   z-index: 2;
+  color: black;
 }
 .dark-mode #sidebar {
   background: #161616;
+  color: white;
 }
 h1 {
   text-align: left;
@@ -234,6 +236,9 @@ h1 {
   display: block;
 }
 .nav-link, .nav-link:visited {
+  color: black;
+}
+.dark-mode .nav-link, .dark-mode .nav-link:visited {
   color: white;
 }
 .nav-link img {
