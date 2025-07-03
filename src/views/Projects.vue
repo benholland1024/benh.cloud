@@ -7,19 +7,10 @@
     </div> <!--  End left container -->
 
     <div id="right-container">
-      <h1>About Me</h1>
+      <h1>Projects</h1>
       <br>
-      <p>I work in web design, making web apps, animations, data displays, etc. </p>
+      <p>I like to work on personal projects. I'll post some that I've completed here, soon.</p>
       <br>
-      <p>I also have experience in circuit design, controlling motors, and reading from sensors. </p>
-      <br/><br/>
-      <div style="width: 300px; text-align: left; padding-left: 100px;">
-        <p><img src="../assets/icons/mail.png" class="icon" /><a href="mailto:benholland1024@gmail.com">benholland1024@gmail.com</a></p>
-        <p><img src="../assets/icons/phone.png" class="icon" /><a href="tel:+13307038105">330.703.8105</a></p>
-        <p><img src="../assets/icons/github.png" class="icon" /><a href="https://github.com/benholland1024">github.com/benholland1024</a></p>
-      </div>
-      <br/>
-      <router-link class="blue2 portfolio-link" to="/portfolio">Portfolio &#8674; </router-link>
     </div>
 
     <div id="display"></div>
@@ -297,10 +288,8 @@ export default {
 <style scoped>
   #flex-container {
     display: flex;
-    width: 100vw;
+    /* width: 100vw; */
     padding-top: 100px;
-    margin-left: 300px;
-    box-sizing: border-box;
     justify-content: space-around;
     flex-flow: row wrap;
     position: relative;
@@ -351,10 +340,13 @@ export default {
     padding: 10px;
     padding-top: 10px;
     padding-bottom: 300px;
-    text-align: center;
+    text-align: left;
     font-family: sans-serif;
     z-index: 1;
     background: rgba(255,255,255,.5)
+  }
+  #right-container h1 {
+    color: var(--brown);
   }
   .dark-mode #right-container  {
     background: rgba(13,13,13,.5)

@@ -12,7 +12,7 @@
         <router-link class="nav-link" to="/"><img src="./assets/page_assets/bio/icons/face.png"/>bio</router-link>
         <router-link class="nav-link" to="/portfolio"><img src="./assets/page_assets/bio/icons/briefcase.png"/>portfolio</router-link>
         <router-link class="nav-link" to="/projects"><img src="./assets/page_assets/bio/icons/machine.png"/>projects</router-link>
-        <router-link class="nav-link" to="/dash"><img src="./assets/page_assets/bio/icons/paragraph.png"/>blog</router-link>
+        <router-link class="nav-link" to="/dash"><img src="./assets/page_assets/bio/icons/paragraph.png"/>dashboard</router-link>
       </nav>
     </div>
 
@@ -24,7 +24,7 @@
       <router-link class="nav-link" to="/"><img src="./assets/page_assets/bio/icons/face.png"/><br/>bio</router-link>
         <router-link class="nav-link" to="/portfolio"><img src="./assets/page_assets/bio/icons/briefcase.png"/><br/>portfolio</router-link>
         <router-link class="nav-link" to="/projects"><img src="./assets/page_assets/bio/icons/machine.png"/><br/>projects</router-link>
-        <router-link class="nav-link" to="/dash"><img src="./assets/page_assets/bio/icons/paragraph.png"/><br/>blog</router-link>
+        <router-link class="nav-link" to="/dash"><img src="./assets/page_assets/bio/icons/paragraph.png"/><br/>dashboard</router-link>
     </div>
 
   </div>
@@ -93,6 +93,8 @@ export default {
   --gray: #999999;
   --black: #0D0D0D;
   --light-black: #1E1E1E;
+
+  --sidebar-width: 240px; 
 }
 
 .blue {
@@ -178,7 +180,7 @@ header, #nav-links {
   position: fixed;
   left: 0px;
   height: 100vh;
-  width: 300px;
+  width: var(--sidebar-width);
   background: #ddd;
   z-index: 2;
   color: black;
@@ -290,7 +292,7 @@ nav a:not(.router-link-exact-active) {
 /************************* */
 #content-container {
   width: 100vw;
-  padding-left: 300px;
+  padding-left: var(--sidebar-width);
   box-sizing: border-box;
   overflow-x: hidden;
 }
