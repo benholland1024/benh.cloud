@@ -6,13 +6,13 @@
 
     <div id="sidebar">
       <header>
-        <h1>benh.cloud</h1>
+        <router-link style="color:white; text-decoration: none;" to="/"><h1>benh.cloud</h1></router-link>
       </header>
       <nav id="nav-links">
-        <router-link class="nav-link" to="/"><img src="./assets/page_assets/bio/icons/face.png"/>bio</router-link>
+        <router-link class="nav-link" to="/"><img src="./assets/page_assets/bio/icons/face.png"/>about me</router-link>
         <router-link class="nav-link" to="/portfolio"><img src="./assets/page_assets/bio/icons/briefcase.png"/>portfolio</router-link>
         <router-link class="nav-link" to="/projects"><img src="./assets/page_assets/bio/icons/machine.png"/>projects</router-link>
-        <router-link class="nav-link" to="/dash"><img src="./assets/page_assets/bio/icons/paragraph.png"/>dashboard</router-link>
+        <!-- <router-link class="nav-link" to="/dash"><img src="./assets/page_assets/bio/icons/paragraph.png"/>blog</router-link> -->
       </nav>
     </div>
 
@@ -21,10 +21,10 @@
     </div>
 
     <div id="mobile-navbar">
-      <router-link class="nav-link" to="/"><img src="./assets/page_assets/bio/icons/face.png"/><br/>bio</router-link>
+      <router-link class="nav-link" to="/"><img src="./assets/page_assets/bio/icons/face.png"/><br/>about me</router-link>
         <router-link class="nav-link" to="/portfolio"><img src="./assets/page_assets/bio/icons/briefcase.png"/><br/>portfolio</router-link>
         <router-link class="nav-link" to="/projects"><img src="./assets/page_assets/bio/icons/machine.png"/><br/>projects</router-link>
-        <router-link class="nav-link" to="/dash"><img src="./assets/page_assets/bio/icons/paragraph.png"/><br/>dashboard</router-link>
+        <!-- <router-link class="nav-link" to="/dash"><img src="./assets/page_assets/bio/icons/paragraph.png"/><br/>blog</router-link> -->
     </div>
 
   </div>

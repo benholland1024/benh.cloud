@@ -1,11 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Landing from '../views/Landing.vue'
+import AboutMe from '../views/AboutMe.vue'
 
 const routes = [
+  //////////////////////////
+  //    Public routes:    //
+  //////////////////////////
   {
     path: '/',
-    name: 'Landing',
-    component: Landing
+    name: 'AboutMe',
+    component: AboutMe
   },
   {
     path: '/portfolio',
@@ -15,24 +18,22 @@ const routes = [
     component: () => import(/* webpackChunkName: "portfolio" */ '../views/Portfolio.vue')
   },
   {
-    path: '/plans',
-    name: 'Plans',
-    component: () => import('../views/Plans.vue')
+    path: '/projects',
+    name: 'projects',
+    component: () => import('../views/Projects.vue')
+  },
+  //////////////////////////
+  //    Hidden routes:    //
+  //////////////////////////
+  {
+    path: '/dash',
+    name: 'Dash',
+    component: () => import('../views/Dash.vue')
   },
   {
     path: '/3d-playground',
     name: '3dPlayground',
     component: () => import('../views/3dPlayground.vue')
-  },
-  {
-    path: '/projects',
-    name: 'projects',
-    component: () => import('../views/Projects.vue')
-  },
-  {
-    path: '/dash',
-    name: 'Dash',
-    component: () => import('../views/Dash.vue')
   },
   {
     path: '/login',

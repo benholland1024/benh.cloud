@@ -1,3 +1,15 @@
+<!--
+  Portfolio.vue
+
+  Displays my work projects, including:
+   - The pulse duplictor 
+   - The Albert law firm website
+   - The startup stirfry website.
+   - The KHE website.
+
+-->
+
+
 <template>
   <div class="text-center">
     <!-- <h1>Portfolio</h1>
@@ -66,7 +78,7 @@
     <p class="centered" v-if="0">And here are two websites I designed that are no longer in use. </p>
 
     <div class="portfolio-item">
-      <img src="../assets/page_assets/portfolio/khe2019.png" class="portfolio-pic" alt="A screenshot of the home page of the KHE 2018 website.s" />
+      <img src="../assets/page_assets/portfolio/khe2019.png" class="portfolio-pic" alt="A screenshot of the home page of the KHE 2018 website." />
       <div class="portfolio-item-text">
         <p>Website for KSU's hackathon, <b>Kent Hack Enough 2018</b>.</p>
         <p>This was a collaborative effort, but I lead the website design this year. </p>
