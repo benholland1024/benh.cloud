@@ -86,7 +86,7 @@
       </div>
     </div>
 
-    <div class="portfolio-item">
+    <div class="portfolio-item" v-if="0">
       <img src="../assets/page_assets/portfolio/benh.png" class="portfolio-pic" alt="A screenshot of the home page of my old personal website." />
       <div class="portfolio-item-text">
         <p>My old personal website.</p>

@@ -22,7 +22,7 @@
     <div id="right-container">
       <h1>Projects</h1>
       <br>
-      <p>I like to work on personal projects. I'll post some that I've completed here, soon.</p>
+      <p>Below are some other projects I've made.</p>
       <br>
     </div>
 
@@ -44,68 +44,11 @@
     <p class="centered" v-if="0">Below are the websites I've designed that are in active use. </p>
 
     <div class="portfolio-item">
-      <img src="../assets/page_assets/portfolio/pulse_duplicator_diagram.png" class="portfolio-pic" alt="A screenshot of the home page of salbertlaw.com" />
+      <img src="../assets/page_assets/projects/ktty.png" class="portfolio-pic" alt="A screenshot the text editor, kTTY" />
       <div class="portfolio-item-text">
-        <p>A novel <b>pulse duplicator</b>.</p>
-        <p>This is my main project while working at BETA Lab.</p>
-        <p>View a <a :href="`${publicPath}page_assets/portfolio/PulseDuplicatorBMESPoster.pdf`" target="_blank">poster presenting the work.</a></p>
-      </div>
-    </div>
-
-    <div class="portfolio-item">
-      <img src="../assets/page_assets/portfolio/salbertlaw.png" class="portfolio-pic" alt="A screenshot of the home page of salbertlaw.com" />
-      <div class="portfolio-item-text">
-        <p>Website for the <b>Albert Law Firm</b>.</p>
-        <p>This is a redesign of the law firm's old website, using VueJS.</p>
-        <p>Live URL: <a href="https://salbertlaw.com/home" target="_blank">https://salbertlaw.com/home</a></p>
-      </div>
-    </div>
-
-    <div class="portfolio-item" v-if="0">
-      <img src="../assets/page_assets/portfolio/how-react-works.png" class="portfolio-pic" alt="A screenshot of the homepage of how-react.works" />
-      <div class="portfolio-item-text">
-        <p>A tutorial website for ReactJS.</p>
-        <p>I designed & implemented this website with ReactJS, describing ReactJS. </p>
-        <p>Live URL: <a href="https://how-react.works/" target="_blank">https://how-react.works/</a></p>
-      </div>
-    </div>
-
-    <div class="portfolio-item" v-if="0">
-      <img src="../assets/page_assets/portfolio/how-dotnet-works.png" class="portfolio-pic" alt="A screenshot of the homepage of how-dotnet.works" />
-      <div class="portfolio-item-text">
-        <p>A tutorial website for Microsoft's development framework, .NET.</p>
-        <p>I designed & implemented this website with .NET, describing how to use .NET. WIP. </p>
-        <p>Live URL: <a href="https://how-dotnet.works/" target="_blank">https://how-dotnet.works/</a></p>
-      </div>
-    </div>
-
-    <div class="portfolio-item" v-if="0">
-      <img src="../assets/page_assets/portfolio/how-angular-works.png" class="portfolio-pic" alt="A screenshot of the homepage of how-dotnet.works" />
-      <div class="portfolio-item-text">
-        <p>A tutorial website for Google's development framework, Angular.</p>
-        <p>I designed & implemented this website with Angular, describing how to use Angular. WIP. </p>
-        <p>Live URL: <a href="https://how-angular.works/" target="_blank">https://how-angular.works/</a></p>
-      </div>
-    </div>
-
-    <div class="portfolio-item" v-if="0">
-      <img src="../assets/page_assets/portfolio/rooftop-media.png" class="portfolio-pic" alt="A screenshot of the homepage of rooftop-media.org" />
-      <div class="portfolio-item-text">
-        <p>A website for Rooftop Media, a software company I am working on starting.</p>
-        <p>Currently under construction.  This website links to some other software projects I'm working on. </p>
-        <p>Live URL: <a href="https://rooftop-media.org/" target="_blank">https://rooftop-media.org/</a></p>
-      </div>
-    </div>
-
-    <br /><br /><br /><br />
-    <p class="centered" v-if="0">And here are two websites I designed that are no longer in use. </p>
-
-    <div class="portfolio-item">
-      <img src="../assets/page_assets/portfolio/khe2019.png" class="portfolio-pic" alt="A screenshot of the home page of the KHE 2018 website." />
-      <div class="portfolio-item-text">
-        <p>Website for KSU's hackathon, <b>Kent Hack Enough 2018</b>.</p>
-        <p>This was a collaborative effort, but I lead the website design this year. </p>
-        <p>This website is no longer active.  You can see a style guide I made <a :href="`${publicPath}page_assets/portfolio/khe2019_StyleGuide.png`" target="_blank">here</a>.</p>
+        <p>A terminal text editor called <b>kTTY</b>.</p>
+        <p>Build in NodeJS, and partially rebuilt in C++.</p>
+        <p>View or download the project on <a href="https://github.com/rooftop-media/ktty" target="_blank">github</a>.</p>
       </div>
     </div>
 
@@ -115,22 +58,6 @@
         <p>My old personal website.</p>
         <p>This website is no longer active. It used to be live at www.benh.io. </p>
         <p>You can browse an archived version <a :href="`${publicPath}page_assets/portfolio/old_website/index.html`" target="_blank">here</a>.</p>
-      </div>
-    </div>
-
-    <br /><br /><br /><br />
-    <p class="centered" v-if="0">
-      Finally, this website is for a design company I founded with my friend, Nick C.<br />
-      I made the 3d models used on the website, while Nick designed & coded the website itself.
-    </p>
-    <br /><br />
-
-    <div class="portfolio-item">
-      <img src="../assets/page_assets/portfolio/startupstirfry.png" class="portfolio-pic" />
-      <div class="portfolio-item-text">
-        <p>Website for <b>Startup Stirfry</b>.</p>
-        <p>This website is still live.  This was a collaboration between me and Nick Crawford. </p>
-        <p>Live URL:  <a href="https://startupstirfry.com/" target="_blank">https://startupstirfry.com/</a>.</p>
       </div>
     </div>
 
@@ -164,6 +91,7 @@ export default {
   },
   data() {
     return {
+      publicPath: process.env.BASE_URL, //  Links to /public
       camera: null,
       scene: null,
       renderer: null,
