@@ -12,7 +12,7 @@
         <router-link class="nav-link" to="/"><img src="./assets/page_assets/bio/icons/face.png"/>about me</router-link>
         <router-link class="nav-link" to="/portfolio"><img src="./assets/page_assets/bio/icons/briefcase.png"/>portfolio</router-link>
         <router-link class="nav-link" to="/projects"><img src="./assets/page_assets/bio/icons/machine.png"/>projects</router-link>
-        <!-- <router-link class="nav-link" to="/dash"><img src="./assets/page_assets/bio/icons/paragraph.png"/>blog</router-link> -->
+        <router-link class="nav-link" to="/blog"><img src="./assets/page_assets/bio/icons/paragraph.png"/>blog</router-link>
       </nav>
     </div>
 
@@ -36,7 +36,7 @@ export default {
   
   data() {
     return {
-      dark_mode: false,
+      dark_mode: true,
       tooltip_x: 0,
       tooltip_y: 0
     }
