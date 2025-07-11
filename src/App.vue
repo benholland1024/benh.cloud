@@ -9,10 +9,10 @@
         <router-link style="color:white; text-decoration: none;" to="/"><h1>benh.cloud</h1></router-link>
       </header>
       <nav id="nav-links">
-        <router-link class="nav-link" to="/"><img src="./assets/page_assets/bio/icons/face.png"/>about me</router-link>
-        <router-link class="nav-link" to="/portfolio"><img src="./assets/page_assets/bio/icons/briefcase.png"/>portfolio</router-link>
-        <router-link class="nav-link" to="/projects"><img src="./assets/page_assets/bio/icons/machine.png"/>projects</router-link>
-        <router-link class="nav-link" to="/blog"><img src="./assets/page_assets/bio/icons/paragraph.png"/>blog</router-link>
+        <router-link class="nav-link" to="/"><div class="img" id="about-me-link"></div>about me</router-link>
+        <router-link class="nav-link" to="/portfolio"><div class="img" id="portfolio-link"></div>portfolio</router-link>
+        <router-link class="nav-link" to="/projects"><div class="img" id="projects-link"></div>projects</router-link>
+        <router-link class="nav-link" to="/blog"><div class="img" id="blog-link"></div>blog</router-link>
       </nav>
     </div>
 
@@ -21,10 +21,10 @@
     </div>
 
     <div id="mobile-navbar">
-      <router-link class="nav-link" to="/"><img src="./assets/page_assets/bio/icons/face.png"/><br/>about me</router-link>
-        <router-link class="nav-link" to="/portfolio"><img src="./assets/page_assets/bio/icons/briefcase.png"/><br/>portfolio</router-link>
-        <router-link class="nav-link" to="/projects"><img src="./assets/page_assets/bio/icons/machine.png"/><br/>projects</router-link>
-        <!-- <router-link class="nav-link" to="/dash"><img src="./assets/page_assets/bio/icons/paragraph.png"/><br/>blog</router-link> -->
+      <router-link class="nav-link" to="/"><div class="img" id="about-me-link"></div>about me</router-link>
+      <router-link class="nav-link" to="/portfolio"><div class="img" id="portfolio-link"></div>portfolio</router-link>
+      <router-link class="nav-link" to="/projects"><div class="img" id="projects-link"></div>projects</router-link>
+      <router-link class="nav-link" to="/blog"><div class="img" id="blog-link"></div>blog</router-link>
     </div>
 
   </div>
@@ -243,10 +243,36 @@ h1 {
 .dark-mode .nav-link, .dark-mode .nav-link:visited {
   color: white;
 }
-.nav-link img {
+.nav-link .img {
   margin-right: 10px;
-  width: 15px;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
   margin-bottom: -3px;  /*  Makes icons align better with text */
+  background-color: black;
+  background-size: contain;
+  border: solid 3px black;
+  /* -webkit-mask-image: url(./assets/icons/face.svg);
+  mask-image: url(./assets/icons/face.svg); */
+}
+#about-me-link {
+  -webkit-mask-image: url(./assets/icons/face.svg);
+  mask-image: url(./assets/icons/face.svg);
+}
+#portfolio-link {
+  -webkit-mask-image: url(./assets/icons/briefcase.svg);
+  mask-image: url(./assets/icons/briefcase.svg);
+}
+#projects-link {
+  -webkit-mask-image: url(./assets/icons/machine.svg);
+  mask-image: url(./assets/icons/machine.svg);
+}
+#blog-link {
+  -webkit-mask-image: url(./assets/icons/paragraph.svg);
+  mask-image: url(./assets/icons/paragraph.svg);
+}
+.dark-mode .nav-link .img {
+  background-color: white;
 }
 .nav-link:hover {
   text-decoration: underline;
@@ -274,7 +300,17 @@ nav a:not(.router-link-exact-active) {
   }
   .nav-link img {
     margin: 0px;
+    padding: 0px;
   }
+  .img {
+    margin: 0px !important;
+  }
+  #mobile-navbar .nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   #mobile-navbar a.router-link-exact-active {
     font-weight: bold;
   }
