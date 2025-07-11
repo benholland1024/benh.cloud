@@ -197,6 +197,10 @@ h1 {
   box-sizing: border-box;
   font-family: morallySerif;
   font-weight: normal;
+  color: black;
+}
+.dark-mode h1 {
+  color: white;
 }
 
 #mobile-navbar {
