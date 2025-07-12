@@ -4,7 +4,7 @@
     <hr/><hr/><br/>
 
     <div class="blog-post">
-      <h2>HTML template engine 🚂</h2>
+      <h2>HTML Template Engines and Tokenization 🚂 🪙 </h2>
       <p class="byline">July 10th, 2025</p>
       <p>HTML templating engines: Very cool.</p> 
       <p>
@@ -12,10 +12,10 @@
         some basic implementation details. 
       </p>
       <p>
-        My current goal is to implement a single type of feature: Custom component definition, component reuse, 
-        and component trees. A <b class="orange">component</b> is a collection of HTML, CSS, and JS, captured in a JS object and named. 
-        The idea is that one component can contain other components.  You might have a component named "Website" 
-        that contains several components named "Blog-Post" and several named "Comment". 
+        My <a href="https://github.com/rooftop-media/cookbook-tutorial" target="_blank">current goal</a>  is to implement a single type
+        of feature: Custom component definition, component reuse, and component trees. A <b class="green">component</b> is a collection 
+        of HTML, CSS, and JS, captured in a JS object and named. The idea is that one component can contain other components.  
+        You might have a component named "Website" that contains several components named "Blog-Post" and several named "Comment". 
       </p>
       <p>
         For the purposes of this goal, then, a component's HTML "template" is just vanilla HTML, with one difference:
@@ -34,13 +34,66 @@
         named component templates.  In this case, we'll replace the &lt;<code class="blue">my-custom-component</code>&gt;
         tag with the template of <code class="blue">MyCustomComponent</code>.
       </p>
-      <p>So, how do we find all the tag names in our template?</p>
       <p>
-        
+        So, how do we find all the tag names in our template HTML string?
+        The answer is <a href="https://en.wikipedia.org/wiki/Lexical_analysis#Tokenization" target="_blank" class="green bold">tokenization</a>.
+      </p>
+      <p>
+        Tokeniziation is a lexical analysis technique that's also used in compiler logic and language-based machine learning. 
+        The idea is to label not only tag names, but to label <i>all</i> elements of our string. Here's how it works:
+      </p>
+      <ol>
+        <li>
+          Loop through each character of the text string, creating a list of "tokens" as you go.
+          <br/>Each token consists of a token "type" and a token "value".<br/><br/>
+          <ul><li>
+            For example, "&lt;<code class="blue">my-custom-component</code>&gt;" would be represented as 
+            <br/>[ 
+            <!--  { type: "LESS-THAN", value: "<"  }-->
+            <br/> &nbsp; { <code class="green">type</code>: <code class="yel">"LESS-THAN"</code>,&nbsp; <code class="green">value</code>: <code class="yel">"&lt;"</code> &nbsp; },
+            <br/> &nbsp; { <code class="green">type</code>: <code class="yel">"TEXT"</code>,&nbsp; <code class="green">value</code>: <code class="yel">"my-custom-component"</code> &nbsp; },
+            <br/> &nbsp; { <code class="green">type</code>: <code class="yel">"GREATER-THAN"</code>,&nbsp; <code class="green">value</code>: <code class="yel">"&gt;"</code> &nbsp; }
+            <br/>]
+          </li></ul>
+          <br/>
+        </li>
+        <li>
+          Loop through <i>that</i> list of tokens to build a <i>new</i> list of tokens. 
+          <br/>This can be done multiple times, using layers of different token formats. 
+          <br/>It's an easy way to accomplish a few different goals, like:<br/><br/>
+          <ul>
+            <li><b>Adding context</b>, for example labelling an "=" differently depending on whether it's used as plaintext, vs. right after a tag attribute name.<br/><br/></li>
+            <li><b>Simplifying token lists</b>, for example getting rid of the "LESS-THAN" tokens followed by "TEXT" tokens in favor of one "OPEN-TAG-NAME" token.<br/><br/></li>
+            <li>
+              <b>Accomplishing tasks one at a time</b>, for example classifying all vanilla HTML features in one function, then classifying extra features like 
+              &#123;{ double curly braces }}.<br/><br/>
+            </li>
+          </ul>
+          <br/>Such token list layers can make a program much easier to understand, though for efficiency, I believe it's best to use as few "token transform" layers as possible.<br/><br/>
+        </li>
+        <li>
+          Use or alter the final token representation. Our goal was to find the tags named &lt;<code class="blue">my-custom-component</code>&gt; 
+          so we can replace them with the template in <code class="blue">MyCustomComponent</code>. To do this, we can iterate through 
+          the token list until we find a token that looks something like <br/>
+          { <code class="green">type</code>: <code class="yel">"OPEN-TAG-NAME"</code>,&nbsp; <code class="green">value</code>: <code class="yel">"my-custom-component"</code> &nbsp; }
+          <br/>Then we can replace it with a tokenized version of the <code class="blue">MyCustomComponent</code> template. 
+          <br/>Finally, we make a function to transform the token list back into HTML.
+        </li>
+      </ol>
+      <p style="font-style: italic;">
+        [ You might be wondering why we can't use regex instead of tokenization. Regex is a tempting option, but it alone can't 
+        handle context-dependent text searches, since it's a finite state machine.  Or, if it can, it would make less sense to me. 
+        <br/><br/>Regex could be used as part of tokenization, but I opted not to use that tool for this project. ]
+      </p>
+      <p>Tokenization has been a lot of fun so far, and a good excuse to work on my algorithm design skills. </p>
+      <p>
+        The next step of the project will be to write tests, to make sure component rendering is consistent
+        and high quality.
       </p>
       <hr/>
-    </div>
+    </div> <!--  End blog post -->
 
+    <!--  Blog post :)  -->
     <div class="blog-post">
       <h2>Building a Javascript Framework from vanilla JS ✨</h2>
       <p class="byline">July 9th, 2025</p>
@@ -79,7 +132,7 @@
           Using "if" statements in HTML, with syntax that might look like:<br/>
           <!--  <div v-if="my_var">This content only appears if my_var is true! </div>  -->
           <code>
-            &lt;<span class="blue">div</span> <span class="orange">v-if</span>="<span class="yel">my_var</span>"&gt;
+            &lt;<span class="blue">div</span> <span class="green">v-if</span>="<span class="yel">my_var</span>"&gt;
             This content only appears if my_var is true!&lt;/<span class="blue">div</span>&gt;
           </code><br/><br/>
         </li>
@@ -119,13 +172,25 @@ p {
 .blog-post hr {
   margin-bottom: 50px;
 }
+.bold {
+  font-weight: bold;
+}
 .blue {
+  color: rgb(76, 76, 141);
+}
+.dark-mode .blue {
   color: rgb(154, 154, 241);
 }
-.orange {
-  color: rgb(241, 199, 119);
+.green {
+  color: rgb(20, 121, 0);
+}
+.dark-mode .green {
+  color: rgb(168, 241, 119);
 }
 .yel {
+  color: rgb(170, 153, 0);
+}
+.dark-mode .yel {
   color: rgb(255, 240, 101);
 }
 </style>
