@@ -86,6 +86,7 @@ export default {
     // HelloWorld
   },
   mounted() {
+    console.log("Project animation mounted")
     this.init()
     this.animate()
   },

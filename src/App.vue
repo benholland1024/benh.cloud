@@ -17,7 +17,7 @@
     </div>
 
     <div id="content-container">
-      <router-view :dark="dark_mode"/>
+      <router-view :dark="dark_mode" :key="$route.fullPath"/>
     </div>
 
     <div id="mobile-navbar">
