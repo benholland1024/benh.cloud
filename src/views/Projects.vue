@@ -16,13 +16,13 @@
 <template>
   <div id="flex-container">
     <div id="left-container">
-      <!--  This contains the animation. -->
     </div> <!--  End left container -->
 
     <div id="right-container">
       <h1>Projects</h1>
       <br>
       <p>Below are some other projects I've made.</p>
+      <p>{{ dark }}</p>
       <br>
     </div>
 
@@ -109,12 +109,7 @@ export default {
   props: ['dark'],
   watch: {
     dark: function() {
-      console.log("Changed")
-      let bg = '#ffffff';
-      if (this.dark) {
-        bg = '#0D0D0D';
-      }
-      scene.background = new Three.Color(bg);
+      this.update_bg();
     }
   },
   methods: {
@@ -231,6 +226,8 @@ export default {
       // updateCameraOrbit();
 
       this.plane = plane;
+
+      this.update_bg();
     },
     //  INIT: Keyboard!
     listen_for_keypress() {
@@ -278,6 +275,16 @@ export default {
         _this.renderer.setSize(window.innerWidth, window.innerHeight);
       }
 
+    },
+
+    //  Check if we're in dark mode
+    update_bg() {
+      console.log("Changed")
+      let bg = '#ffffff';
+      if (this.dark) {
+        bg = '#0D0D0D';
+      }
+      scene.background = new Three.Color(bg);
     },
 
     create_box(color, x, y, z) {

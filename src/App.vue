@@ -17,7 +17,11 @@
     </div>
 
     <div id="content-container">
-      <router-view :dark="dark_mode" :key="$route.fullPath"/>
+      <router-view :dark="dark_mode" v-slot="{ Component }">
+        <keep-alive>
+          <component :is="Component" :dark="dark_mode" />
+        </keep-alive>
+      </router-view>
     </div>
 
     <div id="mobile-navbar">

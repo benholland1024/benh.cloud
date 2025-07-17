@@ -151,7 +151,23 @@
 </template>
 
 <script>
-
+export default {
+  name: 'Blog',
+  components: {
+    // HelloWorld
+  },
+  mounted() {
+    
+  },
+  data() {
+    return {
+      
+    }
+  },
+  methods: {
+    
+  },
+}
 </script>
 
 <style>
