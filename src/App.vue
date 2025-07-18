@@ -260,6 +260,9 @@ h1 {
   background-color: black;
   background-size: contain;
   border: solid 3px black;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  padding:3px;
   /* -webkit-mask-image: url(./assets/icons/face.svg);
   mask-image: url(./assets/icons/face.svg); */
 }
@@ -303,7 +306,7 @@ nav a:not(.router-link-exact-active) {
   .nav-link {
     text-align: center;
     margin: 0px;
-    padding: 20px;
+    padding-top: 10px;
     box-sizing: border-box;
   }
   .nav-link img {
