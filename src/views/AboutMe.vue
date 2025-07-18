@@ -17,7 +17,7 @@
       <br/><br/>
       <div class="bio-link-container" style="width: 300px; text-align: left">
         <p><img src="../assets/icons/mail.png" class="icon" /><a href="mailto:benholland1024@gmail.com">benholland1024@gmail.com</a></p>
-        <p><img src="../assets/icons/phone.png" class="icon" /><a href="tel:+13307038105">330.703.8105</a></p>
+        <p><img src="../assets/icons/phone.png" class="icon" /><a href="tel:+13307038105">+1 330.703.8105</a></p>
         <p><img src="../assets/icons/github.png" class="icon" /><a href="https://github.com/benholland1024">github.com/benholland1024</a></p>
       </div>
       <br/>
