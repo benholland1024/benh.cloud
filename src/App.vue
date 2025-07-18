@@ -243,7 +243,8 @@ h1 {
   text-align: left;
   font-family: sans-serif;
   text-decoration: none;
-  display: block;
+  display: flex;
+  align-items: center;
 }
 .nav-link, .nav-link:visited {
   color: black;
@@ -308,6 +309,7 @@ nav a:not(.router-link-exact-active) {
     margin: 0px;
     padding-top: 10px;
     box-sizing: border-box;
+    display: block;
   }
   .nav-link img {
     margin: 0px;
