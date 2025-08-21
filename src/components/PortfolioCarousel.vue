@@ -36,10 +36,19 @@
 
       <a class="carousel-card" href="/portfolio/khe-2019">
         <div class="card-screen"></div>
-        <img src="../assets/page_assets/portfolio/khe2019.png" class="portfolio-pic" alt="The website for KHE 2019." style="height:210px"/>
+        <img src="../assets/page_assets/portfolio/khe2019.png" class="portfolio-pic" alt="The website for KHE 2019."  style="height:auto;width:320px"/>
         <div class="carousel-about">
           <h3>Website for KHE 2019</h3>
           <div>Design & code for a hackathon website.</div>
+        </div>
+      </a>
+
+      <a class="carousel-card" href="/portfolio/ktty" >
+        <div class="card-screen"></div>
+        <img src="../assets/page_assets/portfolio/ktty/ktty.png" class="portfolio-pic" alt="A screenshot of the ktty app." style="height:auto;width:320px"/>
+        <div class="carousel-about">
+          <h3>Ktty</h3>
+          <div>A text terminal editor.</div>
         </div>
       </a>
 

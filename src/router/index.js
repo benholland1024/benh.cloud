@@ -40,6 +40,11 @@ const routes = [
     name: 'khe2019',
     component: () => import('../views/portfolio/khe2019.vue')
   },
+  {
+    path: '/portfolio/ktty',
+    name: 'Ktty',
+    component: () => import('../views/portfolio/Ktty.vue')
+  },
   /*********************************/
   /***  End of PORTFOLIO PATHS   ***/
   /*********************************/

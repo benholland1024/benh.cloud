@@ -44,7 +44,7 @@
     <p class="centered" v-if="0">Below are the websites I've designed that are in active use. </p>
 
     <div class="portfolio-item">
-      <img src="../assets/page_assets/projects/ktty.png" class="portfolio-pic" alt="A screenshot the text editor, kTTY" />
+      <!-- <img src="../assets/page_assets/projects/ktty.png" class="portfolio-pic" alt="A screenshot the text editor, kTTY" /> -->
       <div class="portfolio-item-text">
         <p>A terminal text editor called <b>kTTY</b>.</p>
         <p>Build in NodeJS, and partially rebuilt in C++.</p>

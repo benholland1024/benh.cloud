@@ -2,20 +2,25 @@
   <div class="flex-container">
     <div>
       <h2>Ktty - A terminal text editor</h2>
-      <p>This is a terminal text editor written in NodeJS, and re-written in C++.</p><br/>
       <p>
-        It currently features 
+        This is a terminal text editor written in NodeJS, and re-written in C++.  It's similar to 
+        Emacs or Nano.
       </p><br/>
       <p>
-        The client can now edit page content securely from Prismic, without touching any code.  But we still have the flexibility 
-        to add and update features using VueJS tools and libraries when needed.
+        It currently lets you make new files or open existing files, edit text, navigate around text, and save.  
+        You can scroll or resize the window. And it warns you if you try to exit without saving, prompting you 
+        to either save first or commit to losing changes.  A menu bar is implemented, but no menu options are 
+        functional yet.
+      </p><br/>
+      <p>
+        The biggest feature of ktty is it's documentation.  Each step required to recreate ktty is documented 
+        in a tutorial, which you can check out <a href="https://salbertlaw.com" target="_blank">here</a>.
       </p><br/><br/>
-      <p>Check out the Albert Law Firm at <a href="https://salbertlaw.com" target="_blank">salbertlaw.com</a>.</p>
     </div>
     <div class="media-container">
       <video style="width:100%;" autoplay muted loop>
-        <source src="../../assets/page_assets/portfolio/AlbertLaw/AlbertLaw.webm" type="video/webm">
-        <img src="../../assets/page_assets/portfolio/salbertlaw.png" class="portfolio-pic" alt="A screenshot of the home page of DataPantry.com" />
+        <source src="../../assets/page_assets/portfolio/ktty/ktty-demo.mp4" type="video/mp4">
+        <img src="../../assets/page_assets/portfolio/ktty/ktty.png" class="portfolio-pic" alt="A screenshot of the ktty app." />
       </video>
     </div>
   </div>
