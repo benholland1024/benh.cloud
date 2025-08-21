@@ -219,8 +219,6 @@ h1 {
 
 #mobile-navbar {
   display: none;
-  position: relative; /*  Needed for z-index  */
-  z-index: 4;
 }
 
 @media only screen and (max-width: 650px) {
@@ -234,7 +232,7 @@ h1 {
     height: 80px;
     position: fixed;
     bottom: 0px;
-    z-index: 2;
+    z-index: 4;
     display: flex;
   }
   .dark-mode #mobile-navbar {
