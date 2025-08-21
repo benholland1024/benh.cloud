@@ -27,7 +27,7 @@
     <div id="mobile-navbar">
       <router-link class="nav-link" to="/"><div class="img" id="about-me-link"></div>about</router-link>
       <router-link class="nav-link" to="/portfolio"><div class="img" id="portfolio-link"></div>portfolio</router-link>
-      <router-link class="nav-link" to="/projects"><div class="img" id="projects-link"></div>projects</router-link>
+      <!--<router-link class="nav-link" to="/projects"><div class="img" id="projects-link"></div>projects</router-link>-->
       <router-link class="nav-link" to="/blog"><div class="img" id="blog-link"></div>blog</router-link>
     </div>
 
@@ -110,7 +110,6 @@ export default {
   --text-color: white;
   --background-color: black;
   --bg-translucent: rgba(0,0,0,0.9);
-
 }
 
 .blue {
@@ -220,6 +219,8 @@ h1 {
 
 #mobile-navbar {
   display: none;
+  position: relative; /*  Needed for z-index  */
+  z-index: 4;
 }
 
 @media only screen and (max-width: 650px) {
