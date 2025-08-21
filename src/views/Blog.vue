@@ -157,7 +157,7 @@ export default {
     // HelloWorld
   },
   mounted() {
-    
+    this.load_table();
   },
   data() {
     return {
@@ -165,7 +165,22 @@ export default {
     }
   },
   methods: {
-    
+    load_table() {
+      const http = new XMLHttpRequest(); // todo: remove this
+      http.open("GET", "http://104.248.51.41/api/table?name=blog-posts");
+      http.send();
+      http.onreadystatechange = () => {
+        if (http.readyState == 4 && http.status == 200) {
+          let table = JSON.parse(http.responseText);
+          if (!table.error) {
+            console.log("Table recieved! ");
+            console.log(table)
+          } else {
+            //document.getElementById('error').innerHTML = table.msg;
+          }
+        }
+      }
+    }
   },
 }
 </script>

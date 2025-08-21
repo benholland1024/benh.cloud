@@ -11,7 +11,7 @@
       <nav id="nav-links">
         <router-link class="nav-link" to="/"><div class="img" id="about-me-link"></div>about me</router-link>
         <router-link class="nav-link" to="/portfolio"><div class="img" id="portfolio-link"></div>portfolio</router-link>
-        <router-link class="nav-link" to="/projects"><div class="img" id="projects-link"></div>projects</router-link>
+        <!-- <router-link class="nav-link" to="/projects"><div class="img" id="projects-link"></div>projects</router-link> -->
         <router-link class="nav-link" to="/blog"><div class="img" id="blog-link"></div>blog</router-link>
       </nav>
     </div>
@@ -90,6 +90,10 @@ export default {
 /*    Variables.    */
 /****************** */
 :root {
+  --text-color: black;
+  --background-color: white;
+  --bg-translucent: rgba(255,255,255,0.7);
+
   --blue: #466EA8;
   --blue2: #4698A8;
   --brown: #A88846;
@@ -99,6 +103,14 @@ export default {
   --light-black: #1E1E1E;
 
   --sidebar-width: 240px; 
+  font-family: sans-serif;
+
+}
+:root .dark-mode {
+  --text-color: white;
+  --background-color: black;
+  --bg-translucent: rgba(0,0,0,0.9);
+
 }
 
 .blue {
@@ -187,11 +199,10 @@ header, #nav-links {
   width: var(--sidebar-width);
   background: #ddd;
   z-index: 2;
-  color: black;
+  color: var(--text-color);
 }
 .dark-mode #sidebar {
   background: #161616;
-  color: white;
 }
 h1 {
   text-align: left;
@@ -272,12 +283,12 @@ h1 {
   mask-image: url(./assets/icons/face.svg);
 }
 #portfolio-link {
-  -webkit-mask-image: url(./assets/icons/briefcase.svg);
-  mask-image: url(./assets/icons/briefcase.svg);
-}
-#projects-link {
   -webkit-mask-image: url(./assets/icons/machine.svg);
   mask-image: url(./assets/icons/machine.svg);
+}
+#projects-link {
+  -webkit-mask-image: url(./assets/icons/briefcase.svg);
+  mask-image: url(./assets/icons/briefcase.svg);
 }
 #blog-link {
   -webkit-mask-image: url(./assets/icons/paragraph.svg);

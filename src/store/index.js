@@ -4,7 +4,8 @@ export default createStore({
   state () {
     return {
       display_tooltip: false,
-      tooltip_message: "Hey :)"
+      tooltip_message: "Hey :)",
+      portfolio_items: []
     }
   },
   mutations: {

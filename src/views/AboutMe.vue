@@ -1,7 +1,9 @@
 <template>
-  <div id="flex-container">
 
-  
+  <!------------------------------>
+  <!--    Image and About-Me    -->
+  <!------------------------------>
+  <div id="flex-container">
     <div id="shape-container">
       <img src="../assets/page_assets/bio/decorated_pfp.png" style="width:100%;"/>
 
@@ -24,16 +26,17 @@
       <router-link class="blue2 portfolio-link" to="/portfolio">Portfolio &#8674; </router-link>
     </div>
 
-
-      <!-- info minimized-->
-      <!-- <div id="info-mini" v-else-if="false">
-        <div class="clickable" @click="show_info=true">Show info</div>
-      </div> -->
-
   </div>
+
+  <!------------------------------>
+  <!--    Portfolio Carousel    -->
+  <!------------------------------>
+  <portfolio-carousel></portfolio-carousel>
+
 </template>
 
 <script>
+import PortfolioCarousel from '@/components/PortfolioCarousel.vue';
 
 /*
 
@@ -41,15 +44,16 @@
 */
 
 export default {
-  name: 'Landing',
+  name: 'AboutMe',
   components: {
-    // HelloWorld
+    PortfolioCarousel
   },
   mounted() {
     this.init()
   },
   data() {
     return {
+      carousel_idx: 0
     }
   },
   methods: {
@@ -61,6 +65,10 @@ export default {
 </script>
 
 <style scoped>
+
+  
+
+  /*  The top container, with the image and about-me text.  */
   #flex-container {
     display: flex;
     /* width: 100vw; */
@@ -71,39 +79,16 @@ export default {
     position: relative;
   }
 
-
+  /*  The left container, with the image.  */
   #shape-container {
     width: 100%;
     max-width: 600px;
     position: relative;
     top: 0px;
     z-index: 1;
-    /* border: solid 1px white; */
-  }
-  #info, #info-mini {
-    position: absolute;
-    padding: 20px;
-    background: rgba(0,0,0,0.5);
-    font-family: sans-serif;
-    border-radius: 10px;
-    border: solid gray 1px;
-    top: 100px;
-    right: 30px;
   }
 
-  #info {
-    width: 400px;
-    height: 500px;
-  }
-
-  .clickable {
-    cursor: pointer;
-    opacity: 0.5;
-    font-weight: bold;
-    text-decoration: underline;
-    text-align: right;
-  }
-
+  /*  The container with the about me text  */
   #right-container {
     width: 400px;
     padding: 10px;
@@ -125,16 +110,14 @@ export default {
   #right-container p {
     font-size: large;
   }
-
-  .bio-link-container a {
+  .bio-link-container a {   /*  Container within the right container, with all the links: github, email, etc  */
     color: #88bee0;
   }
-
   .portfolio-link {
     font-weight: bold;
   }
-
-  p {
-    margin-bottom: 5px;;
+  #right-container p {
+    margin-bottom: 5px;
   }
+
 </style>

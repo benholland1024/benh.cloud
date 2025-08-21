@@ -11,17 +11,25 @@
 
 
 <template>
-  <div class="text-center">
+  <div style="width: 100%">
     <!-- <h1>Portfolio</h1>
     <p class="back-link">
       <router-link class="blue2 portfolio-link" to="/">&#8672; Back to the Landing page </router-link>
     </p> -->
+    <Portfolio-carousel></Portfolio-carousel>
 
-    <br /><br /><br /><br />
-    <p class="centered" v-if="0">Below are the websites I've designed that are in active use. </p>
-
+    <!--
     <div class="portfolio-item">
-      <img src="../assets/page_assets/portfolio/pulse_duplicator_diagram.png" class="portfolio-pic" alt="A screenshot of the home page of salbertlaw.com" />
+      <img src="../assets/page_assets/portfolio/DataPantry_landing.png" class="portfolio-pic" alt="A screenshot of the home page of DataPantry.com" />
+      <div class="portfolio-item-text">
+        <p>An online <b>database manager</b>.</p>
+        <p>This is my current main side project. It's similar to Google's Firebase or Amazon's AWS.</p>
+        <p>Check it out at <a :href="`https://datapantry.org`" target="_blank">datapantry.org.</a></p>
+      </div>
+    </div>
+    
+    <div class="portfolio-item">
+      <img src="../assets/page_assets/portfolio/pulse_duplicator_diagram.png" class="portfolio-pic" alt="Pulse duplicator" />
       <div class="portfolio-item-text">
         <p>A novel <b>pulse duplicator</b>.</p>
         <p>This is my main project while working at BETA Lab.</p>
@@ -109,7 +117,7 @@
         <p>This website is still live.  This was a collaboration between me and Nick Crawford. </p>
         <p>Live URL:  <a href="https://startupstirfry.com/" target="_blank">https://startupstirfry.com/</a>.</p>
       </div>
-    </div>
+    </div>-->
 
     <br /><br /><br /><br /><br /><br /><br /><br />
     <br /><br /><br /><br /><br /><br /><br /><br />
@@ -119,10 +127,13 @@
 
 
 <script>
+import PortfolioCarousel from '../components/PortfolioCarousel.vue';
+
 
 export default {
   name: 'Portfolio',
   components: {
+    PortfolioCarousel
   },
   data() {
     return {
@@ -135,7 +146,7 @@ export default {
 
 <style scoped>
 
-h1 {
+/* h1 {
   margin-top: 0px;
   padding-top: 100px;
   text-align: center;
@@ -175,5 +186,5 @@ h1 {
 .portfolio-pic {
     object-fit: cover;
     width: 100%;
-}
+} */
 </style>

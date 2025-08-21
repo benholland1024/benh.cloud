@@ -15,8 +15,35 @@ const routes = [
     name: 'Portfolio',
     // route level code-splitting -- this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "portfolio" */ '../views/Portfolio.vue')
+    component: () => import(/* webpackChunkName: "portfolio" */ '../views/Portfolio.vue'),
   },
+  /**********************/
+  /*  PORFTOLIO PATHS:  */
+  /**********************/
+  {
+    path: '/portfolio/data-pantry',
+    name: 'DataPantry',
+    component: () => import('../views/portfolio/DataPantry.vue')
+  },
+  {
+    path: '/portfolio/albert-law',
+    name: 'AlbertLaw',
+    component: () => import('../views/portfolio/AlbertLaw.vue')
+  },
+  {
+    path: '/portfolio/pulse-duplicator',
+    name: 'PulseDuplicator',
+    component: () => import('../views/portfolio/PulseDuplicator.vue')
+  },
+  {
+    path: '/portfolio/khe-2019',
+    name: 'khe2019',
+    component: () => import('../views/portfolio/khe2019.vue')
+  },
+  /*********************************/
+  /***  End of PORTFOLIO PATHS   ***/
+  /*********************************/
+
   {
     path: '/projects',
     name: 'projects',
