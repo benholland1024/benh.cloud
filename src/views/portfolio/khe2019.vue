@@ -2,7 +2,9 @@
   <div class="flex-container">
     <div>
       <h2>Kent Hack Enough Hackathon</h2>
-      <p>This was the website and style guide for the hackathon for Kent State University.</p>
+      <p>{{(`This was the website and style guide for the hackathon for Kent State University`,
+        `Dies war die Website und der Styleguide für den Hackathon der Kent State University`
+      )}}.</p>
       <br/>
       <p>
         I made all the assets for this website. The site has since been updated, but you can see the 
@@ -20,7 +22,7 @@
 
   <!--  Spacer, to leave room at the bottom. -->
   <div style="padding:200px 0px 200px 10vw;">
-    <a href="/portfolio">&#8617; Back to Ben's Portfolio</a>
+    <a href="/portfolio">&#8617; {{ $t('Back to Ben\'s Portfolio', `Zurück zu Ben's Portfolio`)  }}</a>
   </div>
 
 </template>
@@ -33,6 +35,9 @@ export default {
     return {
       publicPath: process.env.BASE_URL, //  Links to /public
     }
+  },
+  methods: {
+    $t(en, de) { return this.$root.$t(en, de) }
   }
 }
 </script>

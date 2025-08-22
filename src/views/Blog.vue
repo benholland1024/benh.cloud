@@ -180,7 +180,8 @@ export default {
           }
         }
       }
-    }
+    },
+    $t(en, de) { return this.$root.$t(en, de) }
   },
 }
 </script>

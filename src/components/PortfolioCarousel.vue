@@ -12,7 +12,7 @@
         <img src="../assets/page_assets/portfolio/DataPantry_landing.png" class="portfolio-pic" alt="A screenshot of the home page of DataPantry.com" />
         <div class="carousel-about">
           <h3>Data Pantry</h3>
-          <div>A database manager.</div>
+          <div>{{ $t('A database manager.', 'Ein Datenbankmanager') }}</div>
         </div>
       </a>
 
@@ -21,7 +21,7 @@
         <img src="../assets/page_assets/portfolio/salbertlaw.png" class="portfolio-pic" alt="A screenshot of the home page of salbertlaw.com" />
         <div class="carousel-about">
           <h3>The Albert Law Firm</h3>
-          <div>A redesign of the company's old website.</div>
+          <div>{{ $t('A redesign of the company\'s old website.', 'Eine Neugestaltung der alten Website des Unternehmens.') }}</div>
         </div>
       </a>
 
@@ -30,7 +30,7 @@
         <img src="../assets/page_assets/portfolio/pulse_duplicator_diagram.png" class="portfolio-pic" alt="The pulse duplicator, with parts labelled." />
         <div class="carousel-about">
           <h3>Pulse Duplicator</h3>
-          <div>A novel pulse duplicator prototype for Beta Labs.</div>
+          <div>{{ $t('A novel pulse duplicator prototype for Beta Labs.', 'Ein neuartiger Impulsduplikator-Prototyp für Beta Labs.') }}</div>
         </div>
       </a>
 
@@ -38,8 +38,8 @@
         <div class="card-screen"></div>
         <img src="../assets/page_assets/portfolio/khe2019.png" class="portfolio-pic" alt="The website for KHE 2019."  style="height:auto;width:320px"/>
         <div class="carousel-about">
-          <h3>Website for KHE 2019</h3>
-          <div>Design & code for a hackathon website.</div>
+          <h3>Website {{ $t('for', 'für')}} KHE 2019</h3>
+          <div>{{ $t('Design & code for a hackathon website.', 'Design und Code für eine Hackathon-Website.') }}</div>
         </div>
       </a>
 
@@ -48,7 +48,7 @@
         <img src="../assets/page_assets/portfolio/ktty/ktty.png" class="portfolio-pic" alt="A screenshot of the ktty app." style="height:auto;width:320px"/>
         <div class="carousel-about">
           <h3>Ktty</h3>
-          <div>A text terminal editor.</div>
+          <div>{{ $t('A text terminal editor.', 'Ein Textterminal-Editor.') }}</div>
         </div>
       </a>
 
@@ -61,6 +61,9 @@ export default {
   name: 'PortfolioCarousel',
   props: {
     
+  },
+  methods: {
+    $t(en, de) { return this.$root.$t(en, de) }
   }
 }
 

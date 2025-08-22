@@ -2,18 +2,27 @@
   <div class="flex-container">
     <div>
       <h2>DataPantry.org</h2>
-      <p>This project is built and maintained by me, with help from the open source community.</p>
-      <br/>
       <p>
-        DataPantry.org is a <b>database management website</b>.  Businesses can 
+        {{ $t(`This project is built and maintained by me, with help from the open source community.`,
+          `Dieses Projekt wird von mir mit Hilfe der Open-Source-Community erstellt und gepflegt.`
+        )}}
+      </p>
+      <br/>
+      <p v-html="$t(`DataPantry.org is a <b>database management website</b>.  Businesses can 
         design their database using a schema diagram, then immediately use the Pantry API to 
-        access their database tables.
+        access their database tables.`, `DataPantry.org ist eine <b>database management website</b>. 
+        Unternehmen können ihre Datenbank mithilfe eines Schemadiagramms entwerfen und anschließend direkt 
+        über die Pantry-API auf ihre Datenbanktabellen zugreifen.`)">
+        
       </p><br/>
       <p>
-        They can add, update, read or delete data, from their own
-        website, securely, with datatype validation. 
+        {{$t(`They can add, update, read or delete data, from their own
+        website, securely, with datatype validation. `, `Sie können Daten auf ihrer eigenen 
+        Website sicher hinzufügen, aktualisieren, lesen oder löschen, mit Datentypvalidierung.`)}}
       </p><br/><br/>
-      <p>Try it out yourself at <a href="https://datapantry.org" target="_blank">datapantry.org</a>!</p>
+      <p v-html='$t(`Try it out yourself at <a href="https://datapantry.org" target="_blank">datapantry.org</a>!`,
+        `Probieren Sie es selbst aus unter <a href="https://datapantry.org" target="_blank">datapantry.org</a>!`
+      )'></p>
     </div>
     <div class="vid-container">
       <video style="width:100%;" autoplay muted loop>
@@ -33,24 +42,33 @@
       </video>
     </div>
     <div>
-      <p>This is the schema editor.</p><br/>
+      <p>{{ $t(`This is the schema editor.`, `Dies ist der schema editor`)}}</p><br/>
       <p>
-        Tables can be created, moved and renamed.  Table columns can also be created and renamed, and their datatypes can be set.
-        Table relationships can also be defined. 
+        {{ $t(`Tables can be created, moved and renamed.  Table columns can also be created and renamed, and their datatypes can be set.
+        Table relationships can also be defined.`, `Tabellen können erstellt, verschoben und umbenannt werden. Tabellenspalten können 
+        ebenfalls erstellt und umbenannt sowie deren Datentypen festgelegt werden. Tabellenbeziehungen können ebenfalls definiert werden.`) }}
       </p>
     </div>
   </div>
 
   <!--  Spacer, to leave room at the bottom. -->
   <div style="padding:200px 0px 200px 10vw;">
-    <a href="/portfolio">&#8617; Back to Ben's Portfolio</a>
+    <a href="/portfolio">&#8617; {{ $t('Back to Ben\'s Portfolio', `Zurück zu Ben's Portfolio`)  }}</a>
   </div>
 
 </template>
 
 
 <script>
-
+export default {
+  name: 'DataPantry',
+  props: {
+    
+  },
+  methods: {
+    $t(en, de) { return this.$root.$t(en, de) }
+  }
+}
 </script>
 
 <style scoped>

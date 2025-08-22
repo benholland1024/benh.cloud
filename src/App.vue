@@ -9,23 +9,30 @@
         <router-link style="color:white; text-decoration: none;" to="/"><h1>benh.cloud</h1></router-link>
       </header>
       <nav id="nav-links">
-        <router-link class="nav-link" to="/"><div class="img" id="about-me-link"></div>about me</router-link>
+        <router-link class="nav-link" to="/"><div class="img" id="about-me-link"></div>{{ $t('about me', 'über mich')}}</router-link>
         <router-link class="nav-link" to="/portfolio"><div class="img" id="portfolio-link"></div>portfolio</router-link>
         <!-- <router-link class="nav-link" to="/projects"><div class="img" id="projects-link"></div>projects</router-link> -->
         <router-link class="nav-link" to="/blog"><div class="img" id="blog-link"></div>blog</router-link>
       </nav>
+      <select v-model="selected_language" id="lang-select">
+        <option v-for="(lng, i) in Object.keys(languages)" :key="`Lang${i}`" :value="lng">
+          <a v-if="1">
+            {{ languages[lng].nativeName }}
+          </a>
+        </option>
+      </select>
     </div>
 
     <div id="content-container">
-      <router-view :dark="dark_mode" v-slot="{ Component }">
+      <router-view  v-slot="{ Component }">
         <keep-alive>
-          <component :is="Component" :dark="dark_mode" />
+          <component :is="Component" />
         </keep-alive>
       </router-view>
     </div>
 
     <div id="mobile-navbar">
-      <router-link class="nav-link" to="/"><div class="img" id="about-me-link"></div>about</router-link>
+      <router-link class="nav-link" to="/"><div class="img" id="about-me-link"></div>über</router-link>
       <router-link class="nav-link" to="/portfolio"><div class="img" id="portfolio-link"></div>portfolio</router-link>
       <!--<router-link class="nav-link" to="/projects"><div class="img" id="projects-link"></div>projects</router-link>-->
       <router-link class="nav-link" to="/blog"><div class="img" id="blog-link"></div>blog</router-link>
@@ -42,7 +49,12 @@ export default {
     return {
       dark_mode: true,
       tooltip_x: 0,
-      tooltip_y: 0
+      tooltip_y: 0,
+      selected_language: 'en',
+      languages: {
+        en: { nativeName: ' 🇺🇲 English' },
+        de: { nativeName: ' 🇩🇪 Deutsch' },
+      }
     }
   },
 
@@ -54,11 +66,22 @@ export default {
       }
     }
   },
+
+  watch: {
+    selected_language() {
+      localStorage.selected_language = this.selected_language;
+    }
+  },
   
   methods: {
     toggle_dark_mode() {
       this.dark_mode = !this.dark_mode;
       localStorage.darkMode = this.dark_mode;
+    },
+    $t(en, de) {
+      if (this.selected_language == 'en') {
+        return en;
+      } else { return de; }
     }
   },
   
@@ -68,6 +91,10 @@ export default {
       this.dark_mode = false;
     } else {
       this.dark_mode = true;
+    }
+
+    if (['en', 'de'].includes(this.selected_language)) {
+      this.selected_language = localStorage.selected_language;
     }
 
     window.addEventListener('mousemove', (event) => {
@@ -277,6 +304,7 @@ h1 {
   /* -webkit-mask-image: url(./assets/icons/face.svg);
   mask-image: url(./assets/icons/face.svg); */
 }
+
 #about-me-link {
   -webkit-mask-image: url(./assets/icons/face.svg);
   mask-image: url(./assets/icons/face.svg);
@@ -343,6 +371,15 @@ nav a:not(.router-link-exact-active) {
   #mobile-navbar a:not(.router-link-exact-active) {
     font-weight: normal;
   }
+}
+
+/****   Language dropdown    ****/
+#lang-select {
+  background: var(--background-color);
+  color: var(--text-color);
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
 }
 
 

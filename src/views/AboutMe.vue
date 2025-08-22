@@ -10,12 +10,18 @@
     </div> <!--  End shape container -->
 
     <div id="right-container">
-      <h1>about me</h1>
+      <h1>{{ $t('about me', 'über mich') }}</h1>
       <!-- <img src="../assets/page_assets/bio/slice17.png" style="width:100%"/> -->
       <br>
-      <p>I work in web design, making web apps, animations, data displays, etc. </p>
+      <p>
+        {{ $t('I work in web design, making web apps, animations, data displays, etc.',
+        'Ich arbeite im Webdesign und erstelle Web-Apps, Animationen, Datenanzeigen usw.')}}
+      </p>
       <br>
-      <p>I also have experience in circuit design, controlling motors, and reading from sensors. </p>
+      <p>
+        {{ $t('I also have experience in circuit design, controlling motors, and reading from sensors.',
+        'Ich habe auch Erfahrung im Schaltungsdesign, in der Steuerung von Motoren und im Auslesen von Sensoren.')}}
+      </p>
       <br/><br/>
       <div class="bio-link-container" style="width: 300px; text-align: left">
         <p><img src="../assets/icons/mail.png" class="icon" /><a href="mailto:benholland1024@gmail.com">benholland1024@gmail.com</a></p>
@@ -60,6 +66,7 @@ export default {
     // INIT
     init() {
     },
+    $t(en, de) {return this.$root.$t(en, de); }
   }
 }
 </script>

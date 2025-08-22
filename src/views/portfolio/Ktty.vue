@@ -27,14 +27,22 @@
 
   <!--  Spacer, to leave room at the bottom. -->
   <div style="padding:200px 0px 200px 10vw;">
-    <a href="/portfolio">&#8617; Back to Ben's Portfolio</a>
+    <a href="/portfolio">&#8617; {{ $t('Back to Ben\'s Portfolio', `Zurück zu Ben's Portfolio`)  }}</a>
   </div>
 
 </template>
 
 
 <script>
-
+export default {
+  name: 'Ktty',
+  props: {
+    
+  },
+  methods: {
+    $t(en, de) { return this.$root.$t(en, de) }
+  }
+}
 </script>
 
 <style scoped>
