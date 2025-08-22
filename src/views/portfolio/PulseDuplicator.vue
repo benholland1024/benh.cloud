@@ -30,7 +30,7 @@
         Anzeige und Benutzersteuerung erstellt.`)}}
       </p><br/><br/>
       <p>
-        {{(`Check out a poster explaining the work `, `Schauen Sie sich ein Poster an, das die Arbeit erklärt`)}}
+        {{$t(`Check out a poster explaining the work `, `Schauen Sie sich ein Poster an, das die Arbeit erklärt`)}}
         <a :href="`${publicPath}page_assets/portfolio/PulseDuplicatorBMESPoster.pdf`" target="_blank">{{$t('here', 'hier')}}</a>.
       </p>
     </div>

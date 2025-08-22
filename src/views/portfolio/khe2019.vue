@@ -2,13 +2,16 @@
   <div class="flex-container">
     <div>
       <h2>Kent Hack Enough Hackathon</h2>
-      <p>{{(`This was the website and style guide for the hackathon for Kent State University`,
+      <p>{{$t(`This was the website and style guide for the hackathon for Kent State University`,
         `Dies war die Website und der Styleguide für den Hackathon der Kent State University`
       )}}.</p>
       <br/>
       <p>
-        I made all the assets for this website. The site has since been updated, but you can see the 
-        original style guide I made <a :href="`${publicPath}page_assets/portfolio/khe2019_StyleGuide.png`" target="_blank">here</a>.
+        {{$t(`I made all the assets for this website. The site has since been updated, but you can see the 
+        original style guide I made`, 
+        `Ich habe alle Assets für diese Website erstellt. Die Website wurde inzwischen aktualisiert, 
+        aber Sie können den ursprünglichen Styleguide sehen, den ich erstellt habe.`)}}
+         <a :href="`${publicPath}page_assets/portfolio/khe2019_StyleGuide.png`" target="_blank">{{$t('here', 'Hier ist der link')}}</a>.
       </p><br/>
     </div>
     <div class="media-container">
