@@ -93,7 +93,7 @@ export default {
       this.dark_mode = true;
     }
 
-    if (['en', 'de'].includes(this.selected_language)) {
+    if (['en', 'de'].includes(localStorage.selected_language)) {
       this.selected_language = localStorage.selected_language;
     }
 
